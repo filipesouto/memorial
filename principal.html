@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>SB Admin - Start Bootstrap Template</title>
+
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -16,6 +17,9 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+
+
+ 
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -67,29 +71,589 @@
       <!-- Icon Cards-->
       <div class="row">
         <div class="col-sm mb-3">
-            <div class="mr-5">Para o início da apresentação dos cálculos, será necessário assumir uma temperatura arbitrária referente ao interior do receptor solar, chamada de <b>Tw1</b>. Após uma análise dos variados tipos de receptores solar existentes no mercado, notou-se uma variação padrão para as temperaturas internas destes, entre 200°C (473K) e 700°C (973K), dependendo do fluido de trabalho utilizado.</div>
-            <div class="input-group col-md-3 row">
-                <input id="tw1Input" class="form-control" type="text" placeholder="Insria uma valor para TW1...">
-                <span class="input-group-append">
-                  <button class="btn btn-primary" type="button" onClick="atribuirTw1()">
-                    <i class="fa fa-arrow-right"></i>
-                  </button>
-                </span>
+          <h1>Dimensionamento do motor.</h1>
+          <hr>
+          <div class="form-group row">
+              <div class="col-4">
+                <label for="ex1">Qual o diâmetro do pistão de compressão (Dcomp), em m?</label>
+                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Dcomp...">
               </div>
+              <div class="col-4">
+                <label for="ex2">Qual o diâmetro do pistão de expansão (Dexp), em m?</label>
+                <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Dexp...">
+              </div>
+              <div class="col-4">
+                <label for="ex3">Qual o curso do pistão de compressão (Cc), em m?</label>
+                <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para Cc...">
+              </div>
+            </div>
+          <div class="form-group row">
+              <div class="col-4">
+                <label for="ex1">Qual o curso do pistão de expansão (Ce), em m?</label>
+                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Ce...">
+              </div>
+              <div class="col-4">
+                <label for="ex2">Qual o volume total do cilindro de compressão (Vtc), em m³?</label>
+                <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Vtc...">
+              </div>
+              <div class="col-4">
+                <label for="ex3">Qual o volume total do cilindro de expansão (Vte), em m³?</label>
+                <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para Vte...">
+              </div>
+          </div>
+          <div class="form-group row">
+              <div class="col-4">
+                <label for="ex1">Qual o volume total do regenerador (Vr), em m³?</label>
+                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Vr...">
+              </div>
+              <div class="col-4">
+                <label for="ex2">Qual a temperatura do gás no espaço de compressão (Tc), em K?</label>
+                <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Tc...">
+              </div>
+              <div class="col-4">
+                <label for="ex3">Qual a pressão média (Pm) encontrada no motor, em Pa?</label>
+                <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para Pm...">
+              </div>
+          </div>
+          <div class="form-group row">
+              <div class="col-4">
+                <label for="ex1">Qual a rotação nominal do motor (ŋ), em rps?</label>
+                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para ŋ...">
+              </div>
+          </div> 
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimencionamento Motor
+              <i class="fa fa-check"></i>
+          </button>
         </div>
       </div>
       <div class="row">
           <div class="col-sm mb-3">
-              <div class="mr-5">Qual o valor da temperatura Tw1 escolhida, em Kelvin?</div>
-              <span id="tw1Result">Tw1 = </span>
+            <h1>Dimensionamento do coletor parabólico.</h1>
+            <hr>
+            <div class="form-group row">
+                <div class="col-4">
+                  <label for="ex1">Qual o diâmetro de abertura (a) do coletor parabólico, em m?</label>
+                  <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para a...">
+                </div>
+                <div class="col-4">
+                  <label for="ex2">Qual o ângulo de borda do coletor parabólico (β), em graus?</label>
+                  <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para β...">
+                </div>
+                <div class="col-4">
+                  <label for="ex3">Qual o ângulo referente aos desvios padrões dos erros de reflexão do coletor parabólico (δ), em graus?</label>
+                  <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para δ...">
+                </div>
+              </div>
+            <div class="form-group row">
+                <div class="col-4">
+                  <label for="ex1">Qual a refletividade dos espelhos (p) do coletor?</label>
+                  <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para p...">
+                </div>     
+            </div>
+            <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimensionamento do coletor parabólico.
+                <i class="fa fa-check"></i>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm mb-3">
+              <h1>Dimensionamento do receptor.</h1>
+              <hr>
+              <div class="form-group row">
+                  <div class="col-4">
+                    <label for="ex1">Qual o diâmetro interno da cavidade do receptor (Dc), em m?</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Dc...">
+                  </div>
+                  <div class="col-4">
+                    <label for="ex2">Qual o coeficiente de condução térmica da cerâmica (Kcer) presente no receptor, em W/m.K?</label>
+                    <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Kcer...">
+                  </div>
+                  <div class="col-4">
+                    <label for="ex3">Qual a espessura da cerâmica na parte da frente do receptor (tcer), em m?</label>
+                    <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para tcer...">
+                  </div>
+                </div>
+              <div class="form-group row">
+                  <div class="col-4">
+                    <label for="ex1">Qual a espessura da cerâmica na parte de trás do receptor (tcer1), em m?</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para tcer1...">
+                  </div>
+                  <div class="col-4">
+                      <label for="ex1">Qual o comprimento interno da cavidade do receptor (Li), em m?</label>
+                      <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Li...">
+                  </div> 
+                  <div class="col-4">
+                      <label for="ex1">Qual o ângulo de spillage do receptor, em graus?</label>
+                      <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para β1...">
+                  </div>   
+              </div>
+              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimensionamento do receptor.
+                  <i class="fa fa-check"></i>
+              </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm mb-3">
+              <h1>Dimensionamento do absorvedor.</h1>
+              <hr>
+              <div class="form-group row">
+                  <div class="col-4">
+                    <label for="ex1">Qual a área do absorvedor (A), em m²?</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para A...">
+                  </div>
+                  <div class="col-4">
+                    <label for="ex2">Qual a emissividade do absorvedor (ε)?</label>
+                    <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para ε...">
+                  </div>
+              </div>
+              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimensionamento do absorvedor.
+                  <i class="fa fa-check"></i>
+              </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm mb-3">
+              <h1>Irradiação local.</h1>
+              <hr>
+              <div class="form-group row">
+                  <div class="col-4">
+                    <label for="ex1">Qual a irradiação incidente no local (I)?</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para I...">
+                  </div>
+              </div>
+              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Irradiação local.
+                  <i class="fa fa-check"></i>
+              </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm mb-3">
+              <h1>Especificações do fluido de trabalho.</h1>
+              <hr>
+              <div class="form-group row">
+                  <div class="col-4">
+                    <label for="ex1">Qual o calor específico (Cp) do fluido de trabalho?</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Cp...">
+                  </div>
+              </div>
+              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Especificações do fluido de trabalho.
+                  <i class="fa fa-check"></i>
+              </button>
+            </div>
+        </div>
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Os dimensionamentos, a irradiação local e as especificações do fluido de trabalho são definidas para serem utilizadas em alguns cálculos prévios necessários para a realização do projeto.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+        </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Podemos também definir o tamanho da imagem focal (W) que será interceptada no plano focal do receptor, além do diâmetro da entrada do receptor (d), dos raios interno (Rei) e externo (Reo) do receptor e raio do diâmetro interno (Rc) do receptor.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+        </button> 
+        <br>  
+        <br>    
+          <ul>
+            <li><div><span id="tinfResult"><h3>W =</h3> </span></div> </li>
+            <li><div><span id="tinfResult"><h3>d =</h3> </span></div></li>
+          </ul>
+        
+
+         
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Além disso, podemos definir as áreas interna da parte da frente do receptor (SL) e do fundo (SS), muito importante para os cálculos das resistências térmicas internas do receptor.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+        </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Para o início da apresentação dos cálculos, será necessário assumir uma temperatura arbitrária incidente no interior do receptor solar, chamada de Tw1. Esta temperatura é consequência da irradiação solar concentrada pelo coletor parabólico no receptor. Após uma análise dos variados tipos de receptores solares existentes no mercado para os sistemas Disco-Stirling, notou-se uma variação padrão para as temperaturas internas destes, entre 500°C (773K) e 800°C (1073K). Portanto, qual o valor da temperatura assumida Tw1, em K?</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <br>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm mb-3">
+            <h3>Qual o valor da temperatura ambiente, T∞, em K?</h3>
+            <hr>
+            <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para T∞...">
+            <br>
+            <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Atribuir T∞.
+              <i class="fa fa-check"></i>
+            </button>
+            <br>
           </div>
         </div>
 
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Com a temperatura interna do receptor definida (Tw1), agora podemos realizar alguns cálculos para descobrir a potência fornecida pelo motor Stirling. Começaremos pelo cálculo da temperatura relativa ‘t’, que é a razão entre a temperatura do fluido de trabalho na câmara de compressão do motor (Tc) e Th1.  Posteriormente, esta temperatura Tw1 será transformada em Th1, que será uma temperatura mais aproximada da temperatura real.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <br>
+          <br>
+          <ul>
+          <li><div><span id="tinfResult"><h3>t = </h3> </span></div>  </li>
+          <li><div><span id="tinfResult"><h3>Tr = </h3> </span></div>  </li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Sabendo a temperatura relativa, devemos agora verificar a pressão média do motor. Devido à complexidade e tamanho das fórmulas, se faz necessário calcular alguns coeficientes simplificadores, chamados coeficientes de Suntherland. São estes: alfa, cS, B e c.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Podemos também calcular a massa de fluido de trabalho (m) presente no motor.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>m = </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Com as temperaturas Tw1 e T∞ definidas, podemos iniciar os cálculos. Começando pela quantificação da resistência térmica na parte superior do receptor solar, Rtf.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li> <div><span id="tinfResult"><h3>Rtf = </h3> </span></div></li>
+          <li><div><span id="tinfResult"><h3>Rtp = </h3> </span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Para os cálculos realizados tanto para a parte superior quanto para a parte inferior do receptor solar, as resistências térmicas foram relacionadas à convecção externa e pela condução térmica através da parede cerâmica do receptor.</h3>
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Sendo assim, a perda total de energia no receptor solar, relacionada à convecção externa e condução, ϴt, será de:</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>ϴt = </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Para a continuação dos cálculos, devemos agora calcular a temperatura de filme, Tf.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li> <div><span id="tinfResult"><h3>Tf = </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Sabendo qual o valor da temperatura de filme, agora podemos calcular o coeficiente de condução térmica do ar, kf. Este coeficiente será importante para os cálculos de transferências de calor por convecção no interior do receptor.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li> <div><span id="tinfResult"><h3>kf = </h3> </span></div></li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Outro fator que nós podemos avaliar posteriormente ao cálculo da temperatura de filme é a viscosidade cinemática do ar, ƴ.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>ƴ =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Para facilitar os cálculos, será necessário também o cálculo de β2, que nada mais é do que o inverso da temperatura de filme Tf.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>β2 =  </h3> </span></div></li>
+              </ul>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Com os valores de β2 e ƴ definidos, podemos agora calcular o valor no número de Grashof, GrD, muito importante para o cálculo de transferência de calor por convecção no interior do receptor solar.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+         <ul>
+          <li> <div><span id="tinfResult"><h3>GrD =  </h3> </span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Sabendo o valor do número de Grashof, podemos agora calcular o valor do número de Nusselt (Nu) para, posteriormente, calcular o coeficiente de convecção interno (hci) da cavidade do receptor solar.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>Nu =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Agora, com o número de Nusselt e o coeficiente de condução térmica do ar calculados, podemos avaliar o coeficiente de transferência de calor por convecção interna da cavidade do receptor solar, hci.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li> <div><span id="tinfResult"><h3>hci =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Com o coeficiente de transferência de calor por convecção calculado, agora podemos definir o valor da perda total de energia por transferência de calor no interior da cavidade do receptor solar, ϴci.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>ϴci =  </h3> </span></div></li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Outro importante fator a ser calculado é a perda total de energia referente a reemissão de radiação no absorvedor do receptor, ϴr, já que este equipamento opera em elevadas temperaturas, as perdas por radiação devem ser consideradas.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>ϴr =  </h3> </span></div></li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Definidas as perdas energéticas do conjunto receptor, concentrador e absorvedor solar, agora podemos calcular a energia interceptada pelo coletor solar, Ein. Para isto, foi necessário fazer um estudo da média da irradiação solar (I) incidida em São Mateus no último ano, conforme definido no passo 57).</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>¥ =  </h3> </span></div></li>
+          <li><div><span id="tinfResult"><h3>Ein =  </h3> </span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Agora podemos calcular o fluxo médio de calor interceptado pelo receptor, E’in.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>E’in =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Sabendo o fluxo médio de calor interceptado pelo receptor, multiplicando pela área do absorvedor e retirando as perdas térmicas de condução, convecção interna, externa e reemissão de radiação, podemos agora avaliar a energia acumulada pelo absorvedor solar, Eac.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>Eac =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h2>Adotamos a energia acumulada pelo absorvedor sendo totalmente transferida para o nosso fluido de trabalho escolhido.</h2>
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Sabendo disso, agora podemos mensurar a suposta real temperatura interna no receptor solar, Th.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li> <div><span id="tinfResult"><h3>Th =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Esta temperatura Th calculada será utilizada como referência para a seguinte iteração: Th deve ser comparada com a temperatura interna assumida no início dos cálculos, Tw1. Enquanto <b>Th – Tw1 > 0,001</b>, deve-se adotar (atribuir) esta nova temperatura Th no lugar de Tw1 e realizar todos os processos a partir do passo 81), até que <b>Th-Tw1 = 0,001</b>. Quando isto acontecer, este novo valor de Th será a nova temperatura interna estabelecida e correta, Th1.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <i class="fa fa-check"></i>
+          </button>
+          <ul>
+              <li><div><span id="tinfResult"><h3>Th1 =  </h3> </span></div></li>
+              </ul>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm mb-3">
+          <h3>Com a nova temperatura Th1 definida, voltaremos agora ao passo 81) e faremos todas os cálculos novamente (pulando os passos 141), 142), 143), 144), 145),  e 146), visto que a temperatura mais aproximada já foi encontrada) utilizando a nova temperatura Th1 que resultará nos valores mais aproximados em todas as variáveis calculadas.</h3>
+          <hr>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+              <i class="fa fa-check"></i>
+          </button>
+          <ul>
+            <li><div><span id="tinfResult"><h3> t =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3> Tr =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  m =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  Rtf =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  Rtp =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  ϴt =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3> Tf =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3> kf =</h3> </span></div></li>
+            <li> <div><span id="tinfResult"><h3>  ƴ =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3> β2 =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>   GrD =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>   Nu =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  hci =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>   ϴci =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  ϴr =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>   ¥ =</h3> </span></div></li>
+            <li> <div><span id="tinfResult"><h3>   Ein =</h3> </span></div></li>
+            <li> <div><span id="tinfResult"><h3>  E’in =</h3> </span></div></li>
+            <li><div><span id="tinfResult"><h3>  Eac =</h3> </span></div></li>
+          </lu>
+        </div>
+      </div>
+
+
+      <div class="row">
+          <div class="col-sm mb-3">
+            <h3>Definidos todos os novos valores das variáveis anteriores, podemos agora avaliar a energia indicada no motor, Ei.</h3>
+            <hr>
+            <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+              <i class="fa fa-check"></i>
+            </button>
+            <ul>
+                <li> <div><span id="tinfResult"><h3>Ei =  </h3> </span></div></li>
+                </ul>
+          </div>
+        </div>
+
+
         <div class="row">
-          Abaixo segue exemplos de grafico e tabelas que podem ser inseridas. Claro que estou fazendo do jeito mais simples possivel.
-        
-          Dependendo de suas necessidades, tavelz será necessario montar um servidorzinho para rodar a apliação
-      </div>  
+            <div class="col-sm mb-3">
+              <h3>Finalmente, podemos agora avaliar qual será a potência fornecida Wi, pelo motor Stirling SOLO V161, através da captação da energia solar.</h3>
+              <hr>
+              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+                <i class="fa fa-check"></i>
+              </button>
+              <ul>
+                  <li><div><span id="tinfResult"><h3>Wi =  </h3> </span></div></li>
+                  </ul>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-sm mb-3">
+                <h3>Portanto, para uma temperatura interna do receptor de (valor de Th1 encontrada em 145), em K), uma temperatura ambiente em (valor de T∞ encontrada em 79), em K) e uma irradiação solar de (valor de ¥ encontrada em 130), em Wh/m²), temos uma potência fornecida pelo motor Stirling SOLO V161 de (valor de Wi encontrado em 152), em W).</h3>
+                <hr>
+                <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+                  <i class="fa fa-check"></i>
+                </button>
+                <ul>
+                    <li><div><span id="tinfResult"><h3>Wi =  </h3> </span></div></li>
+                    </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm mb-3">
+                <h1>Conclusões</h1>
+              </div>
+            </div>
+  
+
+<!-- PAROU AQUI -->
+
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">
@@ -103,496 +667,6 @@
         <div class="col-lg-8">      
         </div>
       </div> 
-      <!-- Example DataTables Card-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                </tr>
-                <tr>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                  <td>San Francisco</td>
-                  <td>66</td>
-                  <td>2009/01/12</td>
-                  <td>$86,000</td>
-                </tr>
-                <tr>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                  <td>Edinburgh</td>
-                  <td>22</td>
-                  <td>2012/03/29</td>
-                  <td>$433,060</td>
-                </tr>
-                <tr>
-                  <td>Airi Satou</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>33</td>
-                  <td>2008/11/28</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td>Brielle Williamson</td>
-                  <td>Integration Specialist</td>
-                  <td>New York</td>
-                  <td>61</td>
-                  <td>2012/12/02</td>
-                  <td>$372,000</td>
-                </tr>
-                <tr>
-                  <td>Herrod Chandler</td>
-                  <td>Sales Assistant</td>
-                  <td>San Francisco</td>
-                  <td>59</td>
-                  <td>2012/08/06</td>
-                  <td>$137,500</td>
-                </tr>
-                <tr>
-                  <td>Rhona Davidson</td>
-                  <td>Integration Specialist</td>
-                  <td>Tokyo</td>
-                  <td>55</td>
-                  <td>2010/10/14</td>
-                  <td>$327,900</td>
-                </tr>
-                <tr>
-                  <td>Colleen Hurst</td>
-                  <td>Javascript Developer</td>
-                  <td>San Francisco</td>
-                  <td>39</td>
-                  <td>2009/09/15</td>
-                  <td>$205,500</td>
-                </tr>
-                <tr>
-                  <td>Sonya Frost</td>
-                  <td>Software Engineer</td>
-                  <td>Edinburgh</td>
-                  <td>23</td>
-                  <td>2008/12/13</td>
-                  <td>$103,600</td>
-                </tr>
-                <tr>
-                  <td>Jena Gaines</td>
-                  <td>Office Manager</td>
-                  <td>London</td>
-                  <td>30</td>
-                  <td>2008/12/19</td>
-                  <td>$90,560</td>
-                </tr>
-                <tr>
-                  <td>Quinn Flynn</td>
-                  <td>Support Lead</td>
-                  <td>Edinburgh</td>
-                  <td>22</td>
-                  <td>2013/03/03</td>
-                  <td>$342,000</td>
-                </tr>
-                <tr>
-                  <td>Charde Marshall</td>
-                  <td>Regional Director</td>
-                  <td>San Francisco</td>
-                  <td>36</td>
-                  <td>2008/10/16</td>
-                  <td>$470,600</td>
-                </tr>
-                <tr>
-                  <td>Haley Kennedy</td>
-                  <td>Senior Marketing Designer</td>
-                  <td>London</td>
-                  <td>43</td>
-                  <td>2012/12/18</td>
-                  <td>$313,500</td>
-                </tr>
-                <tr>
-                  <td>Tatyana Fitzpatrick</td>
-                  <td>Regional Director</td>
-                  <td>London</td>
-                  <td>19</td>
-                  <td>2010/03/17</td>
-                  <td>$385,750</td>
-                </tr>
-                <tr>
-                  <td>Michael Silva</td>
-                  <td>Marketing Designer</td>
-                  <td>London</td>
-                  <td>66</td>
-                  <td>2012/11/27</td>
-                  <td>$198,500</td>
-                </tr>
-                <tr>
-                  <td>Paul Byrd</td>
-                  <td>Chief Financial Officer (CFO)</td>
-                  <td>New York</td>
-                  <td>64</td>
-                  <td>2010/06/09</td>
-                  <td>$725,000</td>
-                </tr>
-                <tr>
-                  <td>Gloria Little</td>
-                  <td>Systems Administrator</td>
-                  <td>New York</td>
-                  <td>59</td>
-                  <td>2009/04/10</td>
-                  <td>$237,500</td>
-                </tr>
-                <tr>
-                  <td>Bradley Greer</td>
-                  <td>Software Engineer</td>
-                  <td>London</td>
-                  <td>41</td>
-                  <td>2012/10/13</td>
-                  <td>$132,000</td>
-                </tr>
-                <tr>
-                  <td>Dai Rios</td>
-                  <td>Personnel Lead</td>
-                  <td>Edinburgh</td>
-                  <td>35</td>
-                  <td>2012/09/26</td>
-                  <td>$217,500</td>
-                </tr>
-                <tr>
-                  <td>Jenette Caldwell</td>
-                  <td>Development Lead</td>
-                  <td>New York</td>
-                  <td>30</td>
-                  <td>2011/09/03</td>
-                  <td>$345,000</td>
-                </tr>
-                <tr>
-                  <td>Yuri Berry</td>
-                  <td>Chief Marketing Officer (CMO)</td>
-                  <td>New York</td>
-                  <td>40</td>
-                  <td>2009/06/25</td>
-                  <td>$675,000</td>
-                </tr>
-                <tr>
-                  <td>Caesar Vance</td>
-                  <td>Pre-Sales Support</td>
-                  <td>New York</td>
-                  <td>21</td>
-                  <td>2011/12/12</td>
-                  <td>$106,450</td>
-                </tr>
-                <tr>
-                  <td>Doris Wilder</td>
-                  <td>Sales Assistant</td>
-                  <td>Sidney</td>
-                  <td>23</td>
-                  <td>2010/09/20</td>
-                  <td>$85,600</td>
-                </tr>
-                <tr>
-                  <td>Angelica Ramos</td>
-                  <td>Chief Executive Officer (CEO)</td>
-                  <td>London</td>
-                  <td>47</td>
-                  <td>2009/10/09</td>
-                  <td>$1,200,000</td>
-                </tr>
-                <tr>
-                  <td>Gavin Joyce</td>
-                  <td>Developer</td>
-                  <td>Edinburgh</td>
-                  <td>42</td>
-                  <td>2010/12/22</td>
-                  <td>$92,575</td>
-                </tr>
-                <tr>
-                  <td>Jennifer Chang</td>
-                  <td>Regional Director</td>
-                  <td>Singapore</td>
-                  <td>28</td>
-                  <td>2010/11/14</td>
-                  <td>$357,650</td>
-                </tr>
-                <tr>
-                  <td>Brenden Wagner</td>
-                  <td>Software Engineer</td>
-                  <td>San Francisco</td>
-                  <td>28</td>
-                  <td>2011/06/07</td>
-                  <td>$206,850</td>
-                </tr>
-                <tr>
-                  <td>Fiona Green</td>
-                  <td>Chief Operating Officer (COO)</td>
-                  <td>San Francisco</td>
-                  <td>48</td>
-                  <td>2010/03/11</td>
-                  <td>$850,000</td>
-                </tr>
-                <tr>
-                  <td>Shou Itou</td>
-                  <td>Regional Marketing</td>
-                  <td>Tokyo</td>
-                  <td>20</td>
-                  <td>2011/08/14</td>
-                  <td>$163,000</td>
-                </tr>
-                <tr>
-                  <td>Michelle House</td>
-                  <td>Integration Specialist</td>
-                  <td>Sidney</td>
-                  <td>37</td>
-                  <td>2011/06/02</td>
-                  <td>$95,400</td>
-                </tr>
-                <tr>
-                  <td>Suki Burks</td>
-                  <td>Developer</td>
-                  <td>London</td>
-                  <td>53</td>
-                  <td>2009/10/22</td>
-                  <td>$114,500</td>
-                </tr>
-                <tr>
-                  <td>Prescott Bartlett</td>
-                  <td>Technical Author</td>
-                  <td>London</td>
-                  <td>27</td>
-                  <td>2011/05/07</td>
-                  <td>$145,000</td>
-                </tr>
-                <tr>
-                  <td>Gavin Cortez</td>
-                  <td>Team Leader</td>
-                  <td>San Francisco</td>
-                  <td>22</td>
-                  <td>2008/10/26</td>
-                  <td>$235,500</td>
-                </tr>
-                <tr>
-                  <td>Martena Mccray</td>
-                  <td>Post-Sales support</td>
-                  <td>Edinburgh</td>
-                  <td>46</td>
-                  <td>2011/03/09</td>
-                  <td>$324,050</td>
-                </tr>
-                <tr>
-                  <td>Unity Butler</td>
-                  <td>Marketing Designer</td>
-                  <td>San Francisco</td>
-                  <td>47</td>
-                  <td>2009/12/09</td>
-                  <td>$85,675</td>
-                </tr>
-                <tr>
-                  <td>Howard Hatfield</td>
-                  <td>Office Manager</td>
-                  <td>San Francisco</td>
-                  <td>51</td>
-                  <td>2008/12/16</td>
-                  <td>$164,500</td>
-                </tr>
-                <tr>
-                  <td>Hope Fuentes</td>
-                  <td>Secretary</td>
-                  <td>San Francisco</td>
-                  <td>41</td>
-                  <td>2010/02/12</td>
-                  <td>$109,850</td>
-                </tr>
-                <tr>
-                  <td>Vivian Harrell</td>
-                  <td>Financial Controller</td>
-                  <td>San Francisco</td>
-                  <td>62</td>
-                  <td>2009/02/14</td>
-                  <td>$452,500</td>
-                </tr>
-                <tr>
-                  <td>Timothy Mooney</td>
-                  <td>Office Manager</td>
-                  <td>London</td>
-                  <td>37</td>
-                  <td>2008/12/11</td>
-                  <td>$136,200</td>
-                </tr>
-                <tr>
-                  <td>Jackson Bradshaw</td>
-                  <td>Director</td>
-                  <td>New York</td>
-                  <td>65</td>
-                  <td>2008/09/26</td>
-                  <td>$645,750</td>
-                </tr>
-                <tr>
-                  <td>Olivia Liang</td>
-                  <td>Support Engineer</td>
-                  <td>Singapore</td>
-                  <td>64</td>
-                  <td>2011/02/03</td>
-                  <td>$234,500</td>
-                </tr>
-                <tr>
-                  <td>Bruno Nash</td>
-                  <td>Software Engineer</td>
-                  <td>London</td>
-                  <td>38</td>
-                  <td>2011/05/03</td>
-                  <td>$163,500</td>
-                </tr>
-                <tr>
-                  <td>Sakura Yamamoto</td>
-                  <td>Support Engineer</td>
-                  <td>Tokyo</td>
-                  <td>37</td>
-                  <td>2009/08/19</td>
-                  <td>$139,575</td>
-                </tr>
-                <tr>
-                  <td>Thor Walton</td>
-                  <td>Developer</td>
-                  <td>New York</td>
-                  <td>61</td>
-                  <td>2013/08/11</td>
-                  <td>$98,540</td>
-                </tr>
-                <tr>
-                  <td>Finn Camacho</td>
-                  <td>Support Engineer</td>
-                  <td>San Francisco</td>
-                  <td>47</td>
-                  <td>2009/07/07</td>
-                  <td>$87,500</td>
-                </tr>
-                <tr>
-                  <td>Serge Baldwin</td>
-                  <td>Data Coordinator</td>
-                  <td>Singapore</td>
-                  <td>64</td>
-                  <td>2012/04/09</td>
-                  <td>$138,575</td>
-                </tr>
-                <tr>
-                  <td>Zenaida Frank</td>
-                  <td>Software Engineer</td>
-                  <td>New York</td>
-                  <td>63</td>
-                  <td>2010/01/04</td>
-                  <td>$125,250</td>
-                </tr>
-                <tr>
-                  <td>Zorita Serrano</td>
-                  <td>Software Engineer</td>
-                  <td>San Francisco</td>
-                  <td>56</td>
-                  <td>2012/06/01</td>
-                  <td>$115,000</td>
-                </tr>
-                <tr>
-                  <td>Jennifer Acosta</td>
-                  <td>Junior Javascript Developer</td>
-                  <td>Edinburgh</td>
-                  <td>43</td>
-                  <td>2013/02/01</td>
-                  <td>$75,650</td>
-                </tr>
-                <tr>
-                  <td>Cara Stevens</td>
-                  <td>Sales Assistant</td>
-                  <td>New York</td>
-                  <td>46</td>
-                  <td>2011/12/06</td>
-                  <td>$145,600</td>
-                </tr>
-                <tr>
-                  <td>Hermione Butler</td>
-                  <td>Regional Director</td>
-                  <td>London</td>
-                  <td>47</td>
-                  <td>2011/03/21</td>
-                  <td>$356,250</td>
-                </tr>
-                <tr>
-                  <td>Lael Greer</td>
-                  <td>Systems Administrator</td>
-                  <td>London</td>
-                  <td>21</td>
-                  <td>2009/02/27</td>
-                  <td>$103,500</td>
-                </tr>
-                <tr>
-                  <td>Jonas Alexander</td>
-                  <td>Developer</td>
-                  <td>San Francisco</td>
-                  <td>30</td>
-                  <td>2010/07/14</td>
-                  <td>$86,500</td>
-                </tr>
-                <tr>
-                  <td>Shad Decker</td>
-                  <td>Regional Director</td>
-                  <td>Edinburgh</td>
-                  <td>51</td>
-                  <td>2008/11/13</td>
-                  <td>$183,000</td>
-                </tr>
-                <tr>
-                  <td>Michael Bruce</td>
-                  <td>Javascript Developer</td>
-                  <td>Singapore</td>
-                  <td>29</td>
-                  <td>2011/06/27</td>
-                  <td>$183,000</td>
-                </tr>
-                <tr>
-                  <td>Donna Snider</td>
-                  <td>Customer Support</td>
-                  <td>New York</td>
-                  <td>27</td>
-                  <td>2011/01/25</td>
-                  <td>$112,000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
@@ -621,15 +695,72 @@
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
+  
   </div>
 
   <script>
-      function atribuirTw1() {
-          
-          var variavel = document.getElementById("tw1Input").value;
-          console.log(variavel);
-          document.getElementById("tw1Result").innerHTML = "Tw1 = "+ variavel +", em K.";
-      }
+
+    //variaveis fixas.
+    var dx = Math.PI/2;
+    var r = 286.9;
+    var hinf = 6;
+    var b = 1.458*Math.pow(10, -5);
+    var s = 110.4;
+    var patm = 101500;
+    var g = 9.81;
+    var omegaMinusculo = 5.67*Math.pow(10, -8);
+
+    
+    
+    function atribuirTw1() {
+      tw1 = document.getElementById("tw1Input").value;
+      tinf = document.getElementById("tinfInput").value;
+    //  console.log(variavel);
+      document.getElementById("tw1Result").innerHTML = "Tw1 = "+ tw1 +" K.";
+      document.getElementById("tinfResult").innerHTML = "tinf = "+ tinf +" K.";
+    }
+    
+    function calcularRFT() {
+      rft = (1/(hinf*sl)) + 1/(kcer*2*Math.PI*li) * Math.log((dc+(2*tcos))/dc);
+     //var rtf = 0; 0,2177
+      document.getElementById("rtfResult").innerHTML = "RTF = "+ rft +" m.K/W.";
+    }
+
+    function calcularRTP() {
+      rtp = 1/(hinf*ss) + tcer1/(kcer*ss);
+     //var rtf = 0;0,6066
+      document.getElementById("rtpResult").innerHTML = "Rtp = "+ rtp +" m.K/W.";
+    }
+
+    function calcularTetaT() {
+      tetaT = (tw1 - tinf)/(rft+rtp);
+      document.getElementById("tetaTResult").innerHTML = "ϴt = "+ tetaT +" W/m.";
+    }
+    
+    function calcularTF() {
+      tf = (tw1 - tinf)/2;
+      document.getElementById("TfResult").innerHTML = "Para T∞ = " + tinf + "K, temos Tf = " + tf +" K.";
+    }
+
+    function calcularKF() {
+      Kf = 0.024 + (0.00007*tf);
+      document.getElementById("KfResult").innerHTML = "Kf = " + Kf + "W/m.K";
+    }
+
+    function calcularY() {
+      Y = (b*r*Math.pow(tf, 5/2))/((s+tf)*patm);
+      document.getElementById("YResult").innerHTML = "Y = " + Y + "m²/s";
+    }
+
+    function calcularBeta2() {
+      Beta2 = 1/tf;
+      document.getElementById("Beta2Result").innerHTML = "β2 = " + Beta2 + "K^(-1)";
+    }
+
+    function calcularGrf() {
+      Grf = (g*Beta2*(tw1-tinf)*Math.pow(dc,3))/(Y*Y);
+      document.getElementById("GrfResult").innerHTML = "Grf = " + Grf + ", adimensional";
+    }
   </script>
 
 
