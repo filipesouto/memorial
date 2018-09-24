@@ -112,7 +112,7 @@
               </div>
               <div class="col-4">
                 <label for="ex3">Qual a pressão média (Pm) encontrada no motor, em Pa?</label>
-                <input class="form-control" id="Pa" type="text" placeholder="Insria uma valor para Pm...">
+                <input class="form-control" id="Pm" type="text" placeholder="Insria uma valor para Pm...">
               </div>
           </div>
           <div class="form-group row">
@@ -176,7 +176,7 @@
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual a espessura da cerâmica na parte de trás do receptor (tcer1), em m?</label>
-                    <input class="form-control" id="tcer1" type="text" placeholder="Insria uma valor para tcer1...">
+                    <input class="form-control" id="tcerum" type="text" placeholder="Insria uma valor para tcer1...">
                   </div>
                   <div class="col-4">
                       <label for="ex1">Qual o comprimento interno da cavidade do receptor (Li), em m?</label>
@@ -184,7 +184,7 @@
                   </div> 
                   <div class="col-4">
                       <label for="ex1">Qual o ângulo de spillage do receptor, em graus?</label>
-                      <input class="form-control" id="beta1" type="text" placeholder="Insria uma valor para β1...">
+                      <input class="form-control" id="betaum" type="text" placeholder="Insria uma valor para β1...">
                   </div>   
               </div>
               <button class="btn btn-primary" type="button" onClick="atribuirDimensionamentoDoReceptor()"> Dimensionamento do receptor.
@@ -199,7 +199,7 @@
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual a área do absorvedor (A), em m²?</label>
-                    <input class="form-control" id="A" type="text" placeholder="Insria uma valor para A...">
+                    <input class="form-control" id="Aob" type="text" placeholder="Insria uma valor para A...">
                   </div>
                   <div class="col-4">
                     <label for="ex2">Qual a emissividade do absorvedor (ε)?</label>
@@ -284,7 +284,9 @@
         <div class="col-sm mb-3">
           <h3>Para o início da apresentação dos cálculos, será necessário assumir uma temperatura arbitrária incidente no interior do receptor solar, chamada de Tw1. Esta temperatura é consequência da irradiação solar concentrada pelo coletor parabólico no receptor. Após uma análise dos variados tipos de receptores solares existentes no mercado para os sistemas Disco-Stirling, notou-se uma variação padrão para as temperaturas internas destes, entre 500°C (773K) e 800°C (1073K). Portanto, qual o valor da temperatura assumida Tw1, em K?</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <input class="form-control" id="Tw1Input" type="text" placeholder="Insria uma valor para Tw1...">
+          <br>
+          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Atribuir Tw1
             <i class="fa fa-check"></i>
           </button>
           <br>
@@ -295,7 +297,7 @@
           <div class="col-sm mb-3">
             <h3>Qual o valor da temperatura ambiente, T∞, em K?</h3>
             <hr>
-            <input class="form-control" id="Tinf" type="text" placeholder="Insria uma valor para T∞...">
+            <input class="form-control" id="TinfInput" type="text" placeholder="Insria uma valor para T∞...">
             <br>
             <button class="btn btn-primary" type="button" onClick="atribuirTinf()"> Atribuir T∞.
               <i class="fa fa-check"></i>
@@ -356,7 +358,7 @@
           <br>  
           <br> 
           <ul>
-              <li> <div><span id="RTFResult"><h3>Rtf = </h3> </span></div></li>
+              <li> <div><span id="RtfResult"><h3>Rtf = </h3> </span></div></li>
           </ul>
         </div>
       </div>
@@ -387,13 +389,13 @@
         <div class="col-sm mb-3">
           <h3>Sendo assim, a perda total de energia no receptor solar, relacionada à convecção externa e condução, ϴt, será de:</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTeta()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTetaT()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
           <br>  
           <br> 
           <ul>
-              <li><div><span id="TetaResult"><h3>ϴt = </h3> </span></div></li>
+              <li><div><span id="TetaTResult"><h3>ϴt = </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -535,7 +537,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Definidas as perdas energéticas do conjunto receptor, concentrador e absorvedor solar, agora podemos calcular a energia interceptada pelo coletor solar, Ein. Para isto, foi necessário fazer um estudo da média da irradiação solar (I) incidida em São Mateus no último ano, conforme definido no passo 57).</h3>
+          <h3>Definidas as perdas energéticas do conjunto receptor, concentrador e absorvedor solar, agora podemos calcular a energia interceptada pelo coletor solar, Ein. Para isto, foi necessário fazer um estudo da média da irradiação solar (I) incidida em São Mateus no último ano.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirYenEin()"> Gerar Calculo
             <i class="fa fa-check"></i>
@@ -543,7 +545,7 @@
           <br>  
           <br> 
           <ul>
-              <li><div><span id="YenResult"><h3>¥ =  </h3> </span></div></li>
+              <li><div><span id="IRsult"><h3>I =  </h3> </span></div></li>
           <li><div><span id="EinResult"><h3>Ein =  </h3> </span></div></li>
           </ul>
         </div>
@@ -607,7 +609,7 @@
         <div class="col-sm mb-3">
           <h3>Esta temperatura Th calculada será utilizada como referência para a seguinte iteração: Th deve ser comparada com a temperatura interna assumida no início dos cálculos, Tw1. Enquanto <b>Th – Tw1 > 0,001</b>, deve-se adotar (atribuir) esta nova temperatura Th no lugar de Tw1 e realizar todos os processos a partir do passo 81), até que <b>Th-Tw1 = 0,001</b>. Quando isto acontecer, este novo valor de Th será a nova temperatura interna estabelecida e correta, Th1.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirThum()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirThum()"> Calcular Th1
             <i class="fa fa-check"></i>
           </button>
           <br>  
@@ -747,66 +749,395 @@
   <script>
 
     //variaveis fixas.
-    var dx = Math.PI/2;
-    var r = 286.9;
-    var hinf = 6;
-    var b = 1.458*Math.pow(10, -5);
-    var s = 110.4;
-    var patm = 101500;
-    var g = 9.81;
-    var omegaMinusculo = 5.67*Math.pow(10, -8);
+    const Dx = Math.PI/2;
+    const r = 286.9;
+    const hinf = 6;
+    const b = 1.458*Math.pow(10, -5);
+    const s = 110.4;
+    const patm = 101500;
+    const g = 9.81;
+    const sigmaMinusculo = 5.67*Math.pow(10, -8);
 
+    //Variaveis de entrada
+    var Dcomp = 0.068;
+    var Dexp = 0.068;
+    var Cc = 0.044;
+    var Ce = 0.044;
+    var Vtc = 0.00016;
+    var Vte = 0.00016;
+    var Vr = 0.00011;
+    var Tc = 303.0;
+    var Pm = 1.5*Math.pow(10, 7);
+    var rnominal = 25.0;
+    var a = 8.80;
+    var beta = 45.0;
+    var delta = 0.258;
+    var p = 0.94;
+    var Dc = 0.30;
+    var Kcer = 40;
+    var tcer = 0.04;
+    var tcerum = 0.20;
+    var Li = 0.35;
+    var Betaum = 90;
+    var A = 0.070;
+    var epsiolon = 0.880;
+    var I = 1080;
+    var Cp = 5193;
+    var Tw1 = 900.0;
+    var Tinf = 300.0;
+
+    //Variaveis
+    var Vsc = 0.0;
+    var Vse = 0.0;
+    var Vdc = 0.0;
+    var Vde = 0.0;
+    var Xdc = 0.0;
+    var Xde = 0.0;
+    var Xr = 0.0;
+    var v = 0.0;
+    var w = 0.0;
+    var D = 0.0;
+    var Rei = 0.0
+    var Reo = 0.0
+    var Rc = 0.0
+    var Sl = 0.0;
+    var Ss = 0.0;
+    var T = 0.0;
+    var Tr = 0.0;
+    var Alfa = 0.0;
+    var Cs = 0.0;
+    var B = 0.0;
+    var C = 0.0;
+    var m = 0.0;
+    var Rtf = 0.0;
+    var Rtp = 0.0;
+    var Tetat = 0.0;
+    var Tf = 0.0;
+    var Kf = 0.0;
+    var y = 0.0;
+    var Betadois = 0.0;
+    var Grd = 0.0;
+
+    function atribuirVscVseVdcVdeXdcXdeXrV()
+    {
+      Vsc = Math.PI*Dcomp*Dcomp*Cc/4;
+      Vse = Math.PI*Dexp*Dexp*Ce/4;
+      Vdc = Vtc - Vsc;
+      Vde = Vte - Vse;
+      Xdc = Vdc/Vse;
+      Xde = Vde/Vse;
+      Xr = Vr/Vse;
+      v = Vsc/Vse;
+      console.log("Vsc = " + Vsc)
+      console.log("Vse = " + Vse)
+      console.log("Vdc = " + Vdc)
+      console.log("Vde = " + Vde)
+      console.log("Xdc = " + Xdc)
+      console.log("Xde = " + Xde)
+      console.log("Xr = " + Xr)
+      console.log("v = " + v)
+    }
+
+    function atribuirWDReiReoRc()
+    {
+      w = (a*Math.sin(0.267+(delta/2)))/(Math.sin(beta)*Math.cos((beta + 0.267 + (delta/2))));
+      D = w+0.02;
+      Rei = D/2;
+      Reo = D/2;
+      Rc = Dc/2;
+      console.log("w = " + w)
+      console.log("d = " + D)
+      console.log("Rei = " + Rei)
+      console.log("Reo = " + Reo)
+      console.log("Rc = " + Rc)
+      document.getElementById("WResult").innerHTML = "w = "+ w +" m.";
+      document.getElementById("DResult").innerHTML = "d = "+ D +" m.";
+    }
     
+    function atribuirSL()
+    {
+      Sl = (Math.PI*((Rei+Reo)/2)*((Rei+Reo)/2)) + (2*Math.PI*(Rei+Reo/2)) + (Math.PI*((Rei*Rei)-(Rc*Rc)))
+      Ss = Math.PI*Dc*Dc/4
+      console.log("Sl = "+Sl)
+      console.log("ss = " + Ss)
+    }
+
+    function atribuirTw1(){
+      if(document.getElementById("Tw1Input").value){
+      Tw1 = document.getElementById("Tw1Input").value;
+      }
+      console.log("tw1 =" + Tw1)
+    }
+
+    function atribuirTinf(){
+      if(document.getElementById("TinfInput").value){
+        Tinf = document.getElementById("TinfInput").value;
+      }
+      console.log("Tinf =" + Tinf)
+    }
+    // passo 81 func 4.12
+    function atribuirTTr()
+    {
+      T = Tc/Tw1;
+      Tr = (Tw1+Tc)/2
+      document.getElementById("TResult").innerHTML = "T = "+ T;
+      document.getElementById("TrResult").innerHTML = "Tr = "+ Tr +" K.";
+      console.log("T = "+T)
+      console.log("Tr = "+Tr)
+    }
+
+
+    function atribuirAlfaCsBC(){
+      var aux = (v*Math.sin(Dx))/(T + Math.cos(Dx))
+      Alfa = Math.cos(aux)/Math.sin(aux)
+      Cs = T+2*T*Xde+((4+T+Xr)/(1+T))+v+2*Xdc
+      B = Math.sqrt((T*T)+(2*T*v*Math.cos(Dx))+(v*v));
+      C = B/Cs;
+      console.log("Alfa = " + Alfa)
+      console.log("Cs = " + Cs)
+      console.log("B = " + B)
+      console.log("C = "+ C)
+    }
+
+    function atribuirM()
+    {
+      m = Pm*Vr/r*Tr
+      console.log("m = " + m)
+      document.getElementById("MResult").innerHTML = "m = "+ m +" Kg.";
+
+    }
+
+    function atribuirRtf()
+    {
+      Rtf = (1/(hinf*Sl)) + 1/(Kcer*2*Math.PI*Li) * Math.log((Dc+(2*tcer))/Dc);
+      document.getElementById("RtfResult").innerHTML = "Rtf = "+ Rtf +" m.K/W.";
+    }
+
+    function atribuirRtp()
+    {
+      Rtp = 1/(hinf*Ss) + tcerum/(Kcer*Ss);
+      document.getElementById("RtpResult").innerHTML = "Rtp = "+ Rtp +" m.K/W.";
+    }   
+
+    //5.10
+    function atribuirTetaT(tipo){
+      if(tipo == 'th1')
+      {
+       Tw1 = Th;
+      }
+      Tetat = (Tw1 -Tinf) / (Rtf + Rtp);
+      console.log("TetaT = " + Tetat)
+      document.getElementById("TetaTResult").innerHTML = "ϴt = "+ Tetat +" W/m.";
+  
+    }
+
+  function atribuirTf(tipo)
+  {
+    if(tipo == 'th1')
+      {
+       Tw1 = Th;
+      }
+    Tf = (Tw1 + Tinf) / 2;
+    console.log("Tf = " + Tf)
+    document.getElementById("TfResult").innerHTML = "Tf = "+ Tf +" K.";
+  }
+
+  function atribuirKf()
+  {
+    Kf = 0.024 + (0.00007*Tf)
+    console.log("Kf = " + Kf)
+    document.getElementById("KfResult").innerHTML = "Kf = "+ Kf +" W/m.K.";
+  }
+
+  function atribuirY()
+  {
+    y = (B*r*Math.pow(Tf, 5/2))/(patm*(s + Tf))
+    console.log("y = " + y)
+    document.getElementById("YResult").innerHTML = "ƴ = "+ y +" m²/s.";
+
+  }
+  
+  function atrbuirBetadois()
+  {
+    Betadois = 1/Tf;
+    console.log("β2 = "+Betadois);
+    document.getElementById("BdoisResult").innerHTML = "β2 = "+ Betadois +" K^-1.";
+
+  }
+
+  function atribuirGrd(tipo){
+    if(tipo == 'th1')
+      {
+       Tw1 = Th;
+      }
+    Grd = (g*Betadois*(Tw1-Tinf)*Math.pow(Dc, 3))/(y*y)
+    console.log("Grd = " + Grd)
+    document.getElementById("GrdResult").innerHTML = "GrD = "+ Grd + " .";
+
+  }
+
+  var Nu = 0.0;
+
+  function atribuirNu(tipo){
+    if(tipo == 'th1')
+      {
+       Tw1 = Th;
+      }
+    Nu = (0.698*Math.pow(Grd, 0.209))*Math.pow((1+Math.cos(Betaum)), 0.968)*Math.pow(Tw1/Tinf, -0.317)*Math.pow(D/Dc, 0.425)
+    console.log("Nu = " + Nu)
+    document.getElementById("NuResult").innerHTML = "Nu = "+ Nu + " .";
+  }
+
+  var Hci = 0.0;
+
+  function atribuirHci(){
+    Hci = Nu*Kf/Dc;
+    console.log("Hci = " + Hci)
+    document.getElementById("HciResult").innerHTML = "Hci = "+ Hci + " W/(m².K).";
+
+  }
+
+  var Tetaci = 0.0;
+
+  function atribuirTetaci(tipo){
+    if(tipo == 'th1')
+      {
+       Tw1 = Th;
+      }
+    Tetaci = (Hci*Math.PI*Dc*Dc/4)*(Tw1-Tinf)
+    console.log("Tetaci = " + Tetaci)
+    document.getElementById("TetaciResult").innerHTML = "ϴci = "+ Tetaci + " W/m.";
+  }
+
+  var Tetar = 0.0;
+
+  function atribuirTetar(tipo){
+    if(tipo == 'th1')
+      {
+       Tw1 = Th;
+      }
+    Tetar = A*epsiolon*sigmaMinusculo*(Math.pow(Tw1, 4)*Math.pow(Tinf, 4))
+    console.log("Tetar = ", Tetar)
+    document.getElementById("TetarResult").innerHTML = "ϴr = "+ Tetar + " W/m.";
+
+  }
+
+  var Ein = 0.0;
+  function atribuirYenEin(){
+    Ein = I*Math.PI*a*a*p/4
+    console.log("I = " + I)
+    console.log("Ein = " + Ein)
+    document.getElementById("IRsult").innerHTML = "I = "+ I + " Wh/m².";
+    document.getElementById("EinResult").innerHTML = "Ein = "+ Ein + " Wh.";
     
-    function atribuirTw1() {
-      tw1 = document.getElementById("tw1Input").value;
-      tinf = document.getElementById("tinfInput").value;
-    //  console.log(variavel);
-      document.getElementById("tw1Result").innerHTML = "Tw1 = "+ tw1 +" K.";
-      document.getElementById("tinfResult").innerHTML = "tinf = "+ tinf +" K.";
-    }
-    
-    function calcularRFT() {
-      rft = (1/(hinf*sl)) + 1/(kcer*2*Math.PI*li) * Math.log((dc+(2*tcos))/dc);
-     //var rtf = 0; 0,2177
-      document.getElementById("rtfResult").innerHTML = "RTF = "+ rft +" m.K/W.";
-    }
+  }
 
-    function calcularRTP() {
-      rtp = 1/(hinf*ss) + tcer1/(kcer*ss);
-     //var rtf = 0;0,6066
-      document.getElementById("rtpResult").innerHTML = "Rtp = "+ rtp +" m.K/W.";
-    }
+  var Elinhain = 0.0;
+  function atribuirElinhain(){
+    Elinhain = Ein/w;
+    console.log("Elinhain = " + Elinhain)
+    document.getElementById("ElinhainResult").innerHTML = "E’in = "+ Elinhain + " Wh/m.";
+  }
 
-    function calcularTetaT() {
-      tetaT = (tw1 - tinf)/(rft+rtp);
-      document.getElementById("tetaTResult").innerHTML = "ϴt = "+ tetaT +" W/m.";
-    }
-    
-    function calcularTF() {
-      tf = (tw1 - tinf)/2;
-      document.getElementById("TfResult").innerHTML = "Para T∞ = " + tinf + "K, temos Tf = " + tf +" K.";
-    }
+  var Eac = 0.0;
+  function atribuirEac(){
+    Eac = (Elinhain*Math.PI*Dc*Dc/4)-Tetat-Tetaci-Tetar;
+    console.log("Eac = " + Eac)
+    document.getElementById("EacResult").innerHTML = "Eac= "+ Eac + " Wh/m.";
 
-    function calcularKF() {
-      Kf = 0.024 + (0.00007*tf);
-      document.getElementById("KfResult").innerHTML = "Kf = " + Kf + "W/m.K";
-    }
+  }
 
-    function calcularY() {
-      Y = (b*r*Math.pow(tf, 5/2))/((s+tf)*patm);
-      document.getElementById("YResult").innerHTML = "Y = " + Y + "m²/s";
+  var Th = 0.0;
+  function atribuirTh(){
+    Th = (Eac/m*Cp)+Tinf
+    console.log("Th = " + Th)
+    document.getElementById("ThResult").innerHTML = "Th = "+ Th + " K";
+  }
+  
+  var Thum = 0.0;
+  function atribuirThum(tipo){
+    while(Th-Tw1 > 0.001){
+      atribuirTetaT('th1');
+      atribuirTf('th1')
+      atribuirKf()
+      atribuirY()
+      atrbuirBetadois()
+      atribuirGrd('th1')
+      atribuirNu('th1')
+      atribuirHci()
+      atribuirTetaci('th1')
+      atribuirTetar('th1')
+      atribuirYenEin()
+      atribuirElinhain()
+      atribuirEac()
+      atribuirTh()
     }
+    Thum = Th;
+    console.log("Thum = " + Thum)
+    document.getElementById("ThumResult").innerHTML = "Th1 = "+ Thum + " K";
+  }
 
-    function calcularBeta2() {
-      Beta2 = 1/tf;
-      document.getElementById("Beta2Result").innerHTML = "β2 = " + Beta2 + "K^(-1)";
-    }
+  function  atribuirTudoDeNovo(){
 
-    function calcularGrf() {
-      Grf = (g*Beta2*(tw1-tinf)*Math.pow(dc,3))/(Y*Y);
-      document.getElementById("GrfResult").innerHTML = "Grf = " + Grf + ", adimensional";
-    }
+    atribuirTTr()
+    atribuirAlfaCsBC()
+    atribuirM()
+    atribuirRtf()
+    atribuirRtp()
+    atribuirTetaT()
+    atribuirTf()
+    atribuirKf()
+    atribuirY()
+    atrbuirBetadois()
+    atribuirGrd()
+    atribuirNu()
+    atribuirHci()
+    atribuirTetaci()
+    atribuirTetar()
+    atribuirYenEin()
+    atribuirElinhain()
+    atribuirEac()
+
+    document.getElementById("TResultAgain").innerHTML = "T = "+ T;
+    document.getElementById("TrResultAgain").innerHTML = "Tr = "+ Tr +" K.";
+    document.getElementById("MResultAgain").innerHTML = "m = "+ m +" Kg.";
+    document.getElementById("RtfResultAgain").innerHTML = "Rtf = "+ Rtf +" m.K/W.";
+    document.getElementById("RtpResultAgain").innerHTML = "Rtp = "+ Rtp +" m.K/W.";
+    document.getElementById("tetaTResultAgain").innerHTML = "ϴt = "+ Tetat +" W/m.";
+    document.getElementById("TfResultAgain").innerHTML = "Tf = "+ Tf +" K.";
+    document.getElementById("KfResultAgain").innerHTML = "Kf = "+ Kf +" W/m.K.";
+    document.getElementById("YResultAgain").innerHTML = "ƴ = "+ y +" m²/s.";
+    document.getElementById("Beta2ResultAgain").innerHTML = "β2 = "+ Betadois +" K^-1.";
+    document.getElementById("GrdResultAgain").innerHTML = "GrD = "+ Grd + " .";
+    document.getElementById("NuResultAgain").innerHTML = "Nu = "+ Nu + " .";
+    document.getElementById("HciResultAgain").innerHTML = "Hci = "+ Hci + " W/(m².K).";
+    document.getElementById("TetaciResultAgain").innerHTML = "ϴci = "+ Tetaci + " W/m.";
+    document.getElementById("TetarResultAgain").innerHTML = "ϴr = "+ Tetar + " W/m.";
+    document.getElementById("YenResultAgain").innerHTML = "I = "+ I + " Wh/m².";
+    document.getElementById("EinResultAgain").innerHTML = "Ein = "+ Tetar + " Wh.";
+    document.getElementById("ElinhainResultAgain").innerHTML = "E’in = "+ Elinhain + " Wh/m.";
+    document.getElementById("EacResultAgain").innerHTML = "Eac= "+ Eac + " Wh/m.";
+
+
+  }
+
+  var Ei = 0.0;
+  function atribuirEi()
+  {
+    Ei =  (Pm*Vse*Math.PI*C*(1-T)*Math.sin(Alfa))/(1+Math.sqrt(1-(C*C)))
+    console.log("Ei = "+ Ei)
+    document.getElementById("EiResult").innerHTML = "Ei = "+ Ei + " J.";
+  }
+
+  var Wi = 0.0;
+  function atribuirWi()
+  {
+    Wi = Ei*rnominal
+    console.log("Wi = " + Wi)
+    document.getElementById("WiResult").innerHTML = "Wi = "+ Wi + " W.";
+
+  }
+
   </script>
 
 
