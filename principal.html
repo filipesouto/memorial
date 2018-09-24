@@ -76,52 +76,52 @@
           <div class="form-group row">
               <div class="col-4">
                 <label for="ex1">Qual o diâmetro do pistão de compressão (Dcomp), em m?</label>
-                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Dcomp...">
+                <input class="form-control" id="Dcomp" type="text" placeholder="Insria uma valor para Dcomp...">
               </div>
               <div class="col-4">
                 <label for="ex2">Qual o diâmetro do pistão de expansão (Dexp), em m?</label>
-                <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Dexp...">
+                <input class="form-control" id="Dexp" type="text" placeholder="Insria uma valor para Dexp...">
               </div>
               <div class="col-4">
                 <label for="ex3">Qual o curso do pistão de compressão (Cc), em m?</label>
-                <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para Cc...">
+                <input class="form-control" id="Cc" type="text" placeholder="Insria uma valor para Cc...">
               </div>
             </div>
           <div class="form-group row">
               <div class="col-4">
                 <label for="ex1">Qual o curso do pistão de expansão (Ce), em m?</label>
-                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Ce...">
+                <input class="form-control" id="Ce" type="text" placeholder="Insria uma valor para Ce...">
               </div>
               <div class="col-4">
                 <label for="ex2">Qual o volume total do cilindro de compressão (Vtc), em m³?</label>
-                <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Vtc...">
+                <input class="form-control" id="Vtc" type="text" placeholder="Insria uma valor para Vtc...">
               </div>
               <div class="col-4">
                 <label for="ex3">Qual o volume total do cilindro de expansão (Vte), em m³?</label>
-                <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para Vte...">
+                <input class="form-control" id="Vte" type="text" placeholder="Insria uma valor para Vte...">
               </div>
           </div>
           <div class="form-group row">
               <div class="col-4">
                 <label for="ex1">Qual o volume total do regenerador (Vr), em m³?</label>
-                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Vr...">
+                <input class="form-control" id="Vr" type="text" placeholder="Insria uma valor para Vr...">
               </div>
               <div class="col-4">
                 <label for="ex2">Qual a temperatura do gás no espaço de compressão (Tc), em K?</label>
-                <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Tc...">
+                <input class="form-control" id="Tc" type="text" placeholder="Insria uma valor para Tc...">
               </div>
               <div class="col-4">
                 <label for="ex3">Qual a pressão média (Pm) encontrada no motor, em Pa?</label>
-                <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para Pm...">
+                <input class="form-control" id="Pa" type="text" placeholder="Insria uma valor para Pm...">
               </div>
           </div>
           <div class="form-group row">
               <div class="col-4">
                 <label for="ex1">Qual a rotação nominal do motor (ŋ), em rps?</label>
-                <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para ŋ...">
+                <input class="form-control" id="rnominal" type="text" placeholder="Insria uma valor para ŋ...">
               </div>
           </div> 
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimencionamento Motor
+          <button class="btn btn-primary" type="button" onClick="atribuirDimencionamentoDoMotor()"> Dimencionamento Motor
               <i class="fa fa-check"></i>
           </button>
         </div>
@@ -133,24 +133,24 @@
             <div class="form-group row">
                 <div class="col-4">
                   <label for="ex1">Qual o diâmetro de abertura (a) do coletor parabólico, em m?</label>
-                  <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para a...">
+                  <input class="form-control" id="a" type="text" placeholder="Insria uma valor para a...">
                 </div>
                 <div class="col-4">
                   <label for="ex2">Qual o ângulo de borda do coletor parabólico (β), em graus?</label>
-                  <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para β...">
+                  <input class="form-control" id="beta" type="text" placeholder="Insria uma valor para β...">
                 </div>
                 <div class="col-4">
                   <label for="ex3">Qual o ângulo referente aos desvios padrões dos erros de reflexão do coletor parabólico (δ), em graus?</label>
-                  <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para δ...">
+                  <input class="form-control" id="delta" type="text" placeholder="Insria uma valor para δ...">
                 </div>
               </div>
             <div class="form-group row">
                 <div class="col-4">
                   <label for="ex1">Qual a refletividade dos espelhos (p) do coletor?</label>
-                  <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para p...">
+                  <input class="form-control" id="p" type="text" placeholder="Insria uma valor para p...">
                 </div>     
             </div>
-            <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimensionamento do coletor parabólico.
+            <button class="btn btn-primary" type="button" onClick="atribuirDimensionamentoColetorParabolico()"> Dimensionamento do coletor parabólico.
                 <i class="fa fa-check"></i>
             </button>
           </div>
@@ -162,32 +162,32 @@
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual o diâmetro interno da cavidade do receptor (Dc), em m?</label>
-                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Dc...">
+                    <input class="form-control" id="Dc" type="text" placeholder="Insria uma valor para Dc...">
                   </div>
                   <div class="col-4">
                     <label for="ex2">Qual o coeficiente de condução térmica da cerâmica (Kcer) presente no receptor, em W/m.K?</label>
-                    <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para Kcer...">
+                    <input class="form-control" id="Kcer" type="text" placeholder="Insria uma valor para Kcer...">
                   </div>
                   <div class="col-4">
                     <label for="ex3">Qual a espessura da cerâmica na parte da frente do receptor (tcer), em m?</label>
-                    <input class="form-control" id="ex3" type="text" placeholder="Insria uma valor para tcer...">
+                    <input class="form-control" id="tcer" type="text" placeholder="Insria uma valor para tcer...">
                   </div>
                 </div>
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual a espessura da cerâmica na parte de trás do receptor (tcer1), em m?</label>
-                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para tcer1...">
+                    <input class="form-control" id="tcer1" type="text" placeholder="Insria uma valor para tcer1...">
                   </div>
                   <div class="col-4">
                       <label for="ex1">Qual o comprimento interno da cavidade do receptor (Li), em m?</label>
-                      <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Li...">
+                      <input class="form-control" id="Li" type="text" placeholder="Insria uma valor para Li...">
                   </div> 
                   <div class="col-4">
                       <label for="ex1">Qual o ângulo de spillage do receptor, em graus?</label>
-                      <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para β1...">
+                      <input class="form-control" id="beta1" type="text" placeholder="Insria uma valor para β1...">
                   </div>   
               </div>
-              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimensionamento do receptor.
+              <button class="btn btn-primary" type="button" onClick="atribuirDimensionamentoDoReceptor()"> Dimensionamento do receptor.
                   <i class="fa fa-check"></i>
               </button>
             </div>
@@ -199,14 +199,14 @@
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual a área do absorvedor (A), em m²?</label>
-                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para A...">
+                    <input class="form-control" id="A" type="text" placeholder="Insria uma valor para A...">
                   </div>
                   <div class="col-4">
                     <label for="ex2">Qual a emissividade do absorvedor (ε)?</label>
-                    <input class="form-control" id="ex2" type="text" placeholder="Insria uma valor para ε...">
+                    <input class="form-control" id="epsiolon" type="text" placeholder="Insria uma valor para ε...">
                   </div>
               </div>
-              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Dimensionamento do absorvedor.
+              <button class="btn btn-primary" type="button" onClick="atribuirDimenciosamentoDoAbsorvedor()"> Dimensionamento do absorvedor.
                   <i class="fa fa-check"></i>
               </button>
             </div>
@@ -218,10 +218,10 @@
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual a irradiação incidente no local (I)?</label>
-                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para I...">
+                    <input class="form-control" id="I" type="text" placeholder="Insria uma valor para I...">
                   </div>
               </div>
-              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Irradiação local.
+              <button class="btn btn-primary" type="button" onClick="atribuirIrradiacaoLocal()"> Irradiação local.
                   <i class="fa fa-check"></i>
               </button>
             </div>
@@ -233,10 +233,10 @@
               <div class="form-group row">
                   <div class="col-4">
                     <label for="ex1">Qual o calor específico (Cp) do fluido de trabalho?</label>
-                    <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para Cp...">
+                    <input class="form-control" id="Cp" type="text" placeholder="Insria uma valor para Cp...">
                   </div>
               </div>
-              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Especificações do fluido de trabalho.
+              <button class="btn btn-primary" type="button" onClick="atribirEspecificacoesDoFluidoDeTrabalho()"> Especificações do fluido de trabalho.
                   <i class="fa fa-check"></i>
               </button>
             </div>
@@ -245,7 +245,7 @@
         <div class="col-sm mb-3">
           <h3>Os dimensionamentos, a irradiação local e as especificações do fluido de trabalho são definidas para serem utilizadas em alguns cálculos prévios necessários para a realização do projeto.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirVscVseVdcVdeXdcXdeXrV()"> Gerar Calculo
             <i class="fa fa-check"></i>
         </button>
         </div>
@@ -255,14 +255,14 @@
         <div class="col-sm mb-3">
           <h3>Podemos também definir o tamanho da imagem focal (W) que será interceptada no plano focal do receptor, além do diâmetro da entrada do receptor (d), dos raios interno (Rei) e externo (Reo) do receptor e raio do diâmetro interno (Rc) do receptor.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirWDReiReoRc()"> Gerar Calculo
             <i class="fa fa-check"></i>
         </button> 
         <br>  
         <br>    
           <ul>
-            <li><div><span id="tinfResult"><h3>W =</h3> </span></div> </li>
-            <li><div><span id="tinfResult"><h3>d =</h3> </span></div></li>
+            <li><div><span id="WResult"><h3>W =</h3> </span></div> </li>
+            <li><div><span id="DResult"><h3>d =</h3> </span></div></li>
           </ul>
         
 
@@ -274,7 +274,7 @@
         <div class="col-sm mb-3">
           <h3>Além disso, podemos definir as áreas interna da parte da frente do receptor (SL) e do fundo (SS), muito importante para os cálculos das resistências térmicas internas do receptor.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirSL()"> Gerar Calculo
             <i class="fa fa-check"></i>
         </button>
         </div>
@@ -295,9 +295,9 @@
           <div class="col-sm mb-3">
             <h3>Qual o valor da temperatura ambiente, T∞, em K?</h3>
             <hr>
-            <input class="form-control" id="ex1" type="text" placeholder="Insria uma valor para T∞...">
+            <input class="form-control" id="Tinf" type="text" placeholder="Insria uma valor para T∞...">
             <br>
-            <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Atribuir T∞.
+            <button class="btn btn-primary" type="button" onClick="atribuirTinf()"> Atribuir T∞.
               <i class="fa fa-check"></i>
             </button>
             <br>
@@ -309,14 +309,14 @@
         <div class="col-sm mb-3">
           <h3>Com a temperatura interna do receptor definida (Tw1), agora podemos realizar alguns cálculos para descobrir a potência fornecida pelo motor Stirling. Começaremos pelo cálculo da temperatura relativa ‘t’, que é a razão entre a temperatura do fluido de trabalho na câmara de compressão do motor (Tc) e Th1.  Posteriormente, esta temperatura Tw1 será transformada em Th1, que será uma temperatura mais aproximada da temperatura real.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTTr()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
           <br>
           <br>
           <ul>
-          <li><div><span id="tinfResult"><h3>t = </h3> </span></div>  </li>
-          <li><div><span id="tinfResult"><h3>Tr = </h3> </span></div>  </li>
+          <li><div><span id="TResult"><h3>t = </h3> </span></div>  </li>
+          <li><div><span id="TrResult"><h3>Tr = </h3> </span></div>  </li>
         </ul>
         </div>
       </div>
@@ -325,7 +325,7 @@
         <div class="col-sm mb-3">
           <h3>Sabendo a temperatura relativa, devemos agora verificar a pressão média do motor. Devido à complexidade e tamanho das fórmulas, se faz necessário calcular alguns coeficientes simplificadores, chamados coeficientes de Suntherland. São estes: alfa, cS, B e c.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirAlfaCsBC()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
         </div>
@@ -335,11 +335,13 @@
         <div class="col-sm mb-3">
           <h3>Podemos também calcular a massa de fluido de trabalho (m) presente no motor.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirM()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>m = </h3> </span></div></li>
+              <li><div><span id="MResult"><h3>m = </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -348,15 +350,31 @@
         <div class="col-sm mb-3">
           <h3>Com as temperaturas Tw1 e T∞ definidas, podemos iniciar os cálculos. Começando pela quantificação da resistência térmica na parte superior do receptor solar, Rtf.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirRtf()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li> <div><span id="tinfResult"><h3>Rtf = </h3> </span></div></li>
-          <li><div><span id="tinfResult"><h3>Rtp = </h3> </span></div></li>
+              <li> <div><span id="RTFResult"><h3>Rtf = </h3> </span></div></li>
           </ul>
         </div>
       </div>
+
+      <div class="row">
+          <div class="col-sm mb-3">
+            <h3>Agora podemos calcular a resistência térmica na parte inferior do receptor solar, Rtp.</h3>
+            <hr>
+            <button class="btn btn-primary" type="button" onClick="atribuirRtp()"> Gerar Calculo
+              <i class="fa fa-check"></i>
+            </button>
+            <br>  
+            <br> 
+            <ul>
+            <li><div><span id="RtpResult"><h3>Rtp = </h3> </span></div></li>
+            </ul>
+          </div>
+        </div>
 
       <div class="row">
         <div class="col-sm mb-3">
@@ -369,11 +387,13 @@
         <div class="col-sm mb-3">
           <h3>Sendo assim, a perda total de energia no receptor solar, relacionada à convecção externa e condução, ϴt, será de:</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTeta()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>ϴt = </h3> </span></div></li>
+              <li><div><span id="TetaResult"><h3>ϴt = </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -382,11 +402,13 @@
         <div class="col-sm mb-3">
           <h3>Para a continuação dos cálculos, devemos agora calcular a temperatura de filme, Tf.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTf()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li> <div><span id="tinfResult"><h3>Tf = </h3> </span></div></li>
+              <li> <div><span id="TfResult"><h3>Tf = </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -395,11 +417,13 @@
         <div class="col-sm mb-3">
           <h3>Sabendo qual o valor da temperatura de filme, agora podemos calcular o coeficiente de condução térmica do ar, kf. Este coeficiente será importante para os cálculos de transferências de calor por convecção no interior do receptor.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirKf()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li> <div><span id="tinfResult"><h3>kf = </h3> </span></div></li>
+              <li> <div><span id="KfResult"><h3>kf = </h3> </span></div></li>
             </ul>
         </div>
       </div>
@@ -408,11 +432,13 @@
         <div class="col-sm mb-3">
           <h3>Outro fator que nós podemos avaliar posteriormente ao cálculo da temperatura de filme é a viscosidade cinemática do ar, ƴ.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirY()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>ƴ =  </h3> </span></div></li>
+              <li><div><span id="YResult"><h3>ƴ =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -422,11 +448,11 @@
         <div class="col-sm mb-3">
           <h3>Para facilitar os cálculos, será necessário também o cálculo de β2, que nada mais é do que o inverso da temperatura de filme Tf.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atrbuirBetadois()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
           <ul>
-              <li><div><span id="tinfResult"><h3>β2 =  </h3> </span></div></li>
+              <li><div><span id="BdoisResult"><h3>β2 =  </h3> </span></div></li>
               </ul>
 
         </div>
@@ -436,11 +462,13 @@
         <div class="col-sm mb-3">
           <h3>Com os valores de β2 e ƴ definidos, podemos agora calcular o valor no número de Grashof, GrD, muito importante para o cálculo de transferência de calor por convecção no interior do receptor solar.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirGrd()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
          <ul>
-          <li> <div><span id="tinfResult"><h3>GrD =  </h3> </span></div></li>
+          <li> <div><span id="GrdResult"><h3>GrD =  </h3> </span></div></li>
           </ul>
         </div>
       </div>
@@ -449,11 +477,13 @@
         <div class="col-sm mb-3">
           <h3>Sabendo o valor do número de Grashof, podemos agora calcular o valor do número de Nusselt (Nu) para, posteriormente, calcular o coeficiente de convecção interno (hci) da cavidade do receptor solar.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirNu()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>Nu =  </h3> </span></div></li>
+              <li><div><span id="NuResult"><h3>Nu =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -462,11 +492,13 @@
         <div class="col-sm mb-3">
           <h3>Agora, com o número de Nusselt e o coeficiente de condução térmica do ar calculados, podemos avaliar o coeficiente de transferência de calor por convecção interna da cavidade do receptor solar, hci.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirHci()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li> <div><span id="tinfResult"><h3>hci =  </h3> </span></div></li>
+              <li> <div><span id="HciResult"><h3>hci =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -475,11 +507,13 @@
         <div class="col-sm mb-3">
           <h3>Com o coeficiente de transferência de calor por convecção calculado, agora podemos definir o valor da perda total de energia por transferência de calor no interior da cavidade do receptor solar, ϴci.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTetaci()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>ϴci =  </h3> </span></div></li>
+              <li><div><span id="TetaciResult"><h3>ϴci =  </h3> </span></div></li>
             </ul>
         </div>
       </div>
@@ -488,11 +522,13 @@
         <div class="col-sm mb-3">
           <h3>Outro importante fator a ser calculado é a perda total de energia referente a reemissão de radiação no absorvedor do receptor, ϴr, já que este equipamento opera em elevadas temperaturas, as perdas por radiação devem ser consideradas.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTetar()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>ϴr =  </h3> </span></div></li>
+              <li><div><span id="TetarResult"><h3>ϴr =  </h3> </span></div></li>
             </ul>
         </div>
       </div>
@@ -501,12 +537,14 @@
         <div class="col-sm mb-3">
           <h3>Definidas as perdas energéticas do conjunto receptor, concentrador e absorvedor solar, agora podemos calcular a energia interceptada pelo coletor solar, Ein. Para isto, foi necessário fazer um estudo da média da irradiação solar (I) incidida em São Mateus no último ano, conforme definido no passo 57).</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirYenEin()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>¥ =  </h3> </span></div></li>
-          <li><div><span id="tinfResult"><h3>Ein =  </h3> </span></div></li>
+              <li><div><span id="YenResult"><h3>¥ =  </h3> </span></div></li>
+          <li><div><span id="EinResult"><h3>Ein =  </h3> </span></div></li>
           </ul>
         </div>
       </div>
@@ -515,11 +553,13 @@
         <div class="col-sm mb-3">
           <h3>Agora podemos calcular o fluxo médio de calor interceptado pelo receptor, E’in.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirElinhain()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>E’in =  </h3> </span></div></li>
+              <li><div><span id="ElinhainResult"><h3>E’in =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -528,11 +568,13 @@
         <div class="col-sm mb-3">
           <h3>Sabendo o fluxo médio de calor interceptado pelo receptor, multiplicando pela área do absorvedor e retirando as perdas térmicas de condução, convecção interna, externa e reemissão de radiação, podemos agora avaliar a energia acumulada pelo absorvedor solar, Eac.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirEac()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>Eac =  </h3> </span></div></li>
+              <li><div><span id="EacResult"><h3>Eac =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -549,11 +591,13 @@
         <div class="col-sm mb-3">
           <h3>Sabendo disso, agora podemos mensurar a suposta real temperatura interna no receptor solar, Th.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTh()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li> <div><span id="tinfResult"><h3>Th =  </h3> </span></div></li>
+              <li> <div><span id="ThResult"><h3>Th =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -563,11 +607,13 @@
         <div class="col-sm mb-3">
           <h3>Esta temperatura Th calculada será utilizada como referência para a seguinte iteração: Th deve ser comparada com a temperatura interna assumida no início dos cálculos, Tw1. Enquanto <b>Th – Tw1 > 0,001</b>, deve-se adotar (atribuir) esta nova temperatura Th no lugar de Tw1 e realizar todos os processos a partir do passo 81), até que <b>Th-Tw1 = 0,001</b>. Quando isto acontecer, este novo valor de Th será a nova temperatura interna estabelecida e correta, Th1.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirThum()"> Gerar Calculo
             <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-              <li><div><span id="tinfResult"><h3>Th1 =  </h3> </span></div></li>
+              <li><div><span id="ThumResult"><h3>Th1 =  </h3> </span></div></li>
               </ul>
         </div>
       </div>
@@ -577,29 +623,31 @@
         <div class="col-sm mb-3">
           <h3>Com a nova temperatura Th1 definida, voltaremos agora ao passo 81) e faremos todas os cálculos novamente (pulando os passos 141), 142), 143), 144), 145),  e 146), visto que a temperatura mais aproximada já foi encontrada) utilizando a nova temperatura Th1 que resultará nos valores mais aproximados em todas as variáveis calculadas.</h3>
           <hr>
-          <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+          <button class="btn btn-primary" type="button" onClick="atribuirTudoDeNovo()"> Gerar Calculo
               <i class="fa fa-check"></i>
           </button>
+          <br>  
+          <br> 
           <ul>
-            <li><div><span id="tinfResult"><h3> t =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3> Tr =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  m =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  Rtf =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  Rtp =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  ϴt =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3> Tf =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3> kf =</h3> </span></div></li>
-            <li> <div><span id="tinfResult"><h3>  ƴ =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3> β2 =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>   GrD =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>   Nu =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  hci =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>   ϴci =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  ϴr =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>   ¥ =</h3> </span></div></li>
-            <li> <div><span id="tinfResult"><h3>   Ein =</h3> </span></div></li>
-            <li> <div><span id="tinfResult"><h3>  E’in =</h3> </span></div></li>
-            <li><div><span id="tinfResult"><h3>  Eac =</h3> </span></div></li>
+            <li><div><span id="TResultAgain"><h3> t =</h3> </span></div></li>
+            <li><div><span id="TrResultAgain"><h3> Tr =</h3> </span></div></li>
+            <li><div><span id="MResultAgain"><h3>  m =</h3> </span></div></li>
+            <li><div><span id="RtfResultAgain"><h3>  Rtf =</h3> </span></div></li>
+            <li><div><span id="RtpResultAgain"><h3>  Rtp =</h3> </span></div></li>
+            <li><div><span id="tetaTResultAgain"><h3>  ϴt =</h3> </span></div></li>
+            <li><div><span id="TfResultAgain"><h3> Tf =</h3> </span></div></li>
+            <li><div><span id="KfResultAgain"><h3> kf =</h3> </span></div></li>
+            <li> <div><span id="YResultAgain"><h3>  ƴ =</h3> </span></div></li>
+            <li><div><span id="Beta2ResultAgain"><h3> β2 =</h3> </span></div></li>
+            <li><div><span id="GrdResultAgain"><h3>   GrD =</h3> </span></div></li>
+            <li><div><span id="NuResultAgain"><h3>   Nu =</h3> </span></div></li>
+            <li><div><span id="HciResultAgain"><h3>  hci =</h3> </span></div></li>
+            <li><div><span id="TetaciResultAgain"><h3>   ϴci =</h3> </span></div></li>
+            <li><div><span id="TetarResultAgain"><h3>  ϴr =</h3> </span></div></li>
+            <li><div><span id="YenResultAgain"><h3>   ¥ =</h3> </span></div></li>
+            <li> <div><span id="EinResultAgain"><h3>   Ein =</h3> </span></div></li>
+            <li> <div><span id="ElinhainResultAgain"><h3>  E’in =</h3> </span></div></li>
+            <li><div><span id="EacResultAgain"><h3>  Eac =</h3> </span></div></li>
           </lu>
         </div>
       </div>
@@ -609,11 +657,13 @@
           <div class="col-sm mb-3">
             <h3>Definidos todos os novos valores das variáveis anteriores, podemos agora avaliar a energia indicada no motor, Ei.</h3>
             <hr>
-            <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+            <button class="btn btn-primary" type="button" onClick="atribuirEi()"> Gerar Calculo
               <i class="fa fa-check"></i>
             </button>
+            <br>  
+            <br> 
             <ul>
-                <li> <div><span id="tinfResult"><h3>Ei =  </h3> </span></div></li>
+                <li> <div><span id="EiResult"><h3>Ei =  </h3> </span></div></li>
                 </ul>
           </div>
         </div>
@@ -623,11 +673,13 @@
             <div class="col-sm mb-3">
               <h3>Finalmente, podemos agora avaliar qual será a potência fornecida Wi, pelo motor Stirling SOLO V161, através da captação da energia solar.</h3>
               <hr>
-              <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
+              <button class="btn btn-primary" type="button" onClick="atribuirWi()"> Gerar Calculo
                 <i class="fa fa-check"></i>
               </button>
+              <br>  
+              <br> 
               <ul>
-                  <li><div><span id="tinfResult"><h3>Wi =  </h3> </span></div></li>
+                  <li><div><span id="WiResult"><h3>Wi =  </h3> </span></div></li>
                   </ul>
             </div>
           </div>
@@ -636,12 +688,6 @@
               <div class="col-sm mb-3">
                 <h3>Portanto, para uma temperatura interna do receptor de (valor de Th1 encontrada em 145), em K), uma temperatura ambiente em (valor de T∞ encontrada em 79), em K) e uma irradiação solar de (valor de ¥ encontrada em 130), em Wh/m²), temos uma potência fornecida pelo motor Stirling SOLO V161 de (valor de Wi encontrado em 152), em W).</h3>
                 <hr>
-                <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Gerar Calculo
-                  <i class="fa fa-check"></i>
-                </button>
-                <ul>
-                    <li><div><span id="tinfResult"><h3>Wi =  </h3> </span></div></li>
-                    </ul>
               </div>
             </div>
 
