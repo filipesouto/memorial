@@ -838,9 +838,14 @@
       console.log("v = " + v)
     }
 
+    Math.radians = function(degrees) {
+      return degrees * Math.PI / 180;
+    };
+
     function atribuirWDReiReoRc()
     {
-      w = (a*Math.sin(0.267+(delta/2)))/(Math.sin(beta)*Math.cos((beta + 0.267 + (delta/2))));
+      console.log(Math.cos(Math.radians(45)))
+      w = (a*Math.sin(Math.radians(0.267+(delta/2))))/(Math.sin(Math.radians(beta))*Math.cos(Math.radians((beta + 0.267 + (delta/2)))));
       D = w+0.02;
       Rei = D/2;
       Reo = D/2;
@@ -888,10 +893,10 @@
 
 
     function atribuirAlfaCsBC(){
-      var aux = (v*Math.sin(Dx))/(T + Math.cos(Dx))
-      Alfa = Math.cos(aux)/Math.sin(aux)
+      var aux = (v*Math.sin(Math.radians(Dx)))/(T + Math.cos(Math.radians(Dx)))
+      Alfa = Math.cos(Math.radians(aux))/Math.sin(Math.radians(aux))
       Cs = T+2*T*Xde+((4+T+Xr)/(1+T))+v+2*Xdc
-      B = Math.sqrt((T*T)+(2*T*v*Math.cos(Dx))+(v*v));
+      B = Math.sqrt((T*T)+(2*T*v*Math.cos(Math.radians(Dx)))+(v*v));
       C = B/Cs;
       console.log("Alfa = " + Alfa)
       console.log("Cs = " + Cs)
@@ -1124,7 +1129,7 @@
   var Ei = 0.0;
   function atribuirEi()
   {
-    Ei =  (Pm*Vse*Math.PI*C*(1-T)*Math.sin(Alfa))/(1+Math.sqrt(1-(C*C)))
+    Ei =  (Pm*Vse*Math.PI*C*(1-T)*Math.sin(Math.radians(Alfa)))/(1+Math.sqrt(1-(C*C)))
     console.log("Ei = "+ Ei)
     document.getElementById("EiResult").innerHTML = "Ei = "+ Ei + " J.";
   }
