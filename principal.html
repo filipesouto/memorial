@@ -749,10 +749,10 @@
   <script>
 
     //variaveis fixas.
-    const Dx = Math.PI/2;
+    const Dx = 90;
     const r = 286.9;
     const hinf = 6;
-    const b = 1.458*Math.pow(10, -5);
+    const b = 1.458*Math.pow(10, -6);
     const s = 110.4;
     const patm = 101500;
     const g = 9.81;
@@ -861,7 +861,7 @@
     
     function atribuirSL()
     {
-      Sl = (Math.PI*((Rei+Reo)/2)*((Rei+Reo)/2)) + (2*Math.PI*(Rei+Reo/2)) + (Math.PI*((Rei*Rei)-(Rc*Rc)))
+      Sl = (Math.PI*((Rei+Reo)/2)*((Rei+Reo)/2)) + (2*Math.PI*((Rei+Reo)/2)) + (Math.PI*((Rei*Rei)-(Rc*Rc)))
       Ss = Math.PI*Dc*Dc/4
       console.log("Sl = "+Sl)
       console.log("ss = " + Ss)
@@ -894,7 +894,7 @@
 
     function atribuirAlfaCsBC(){
       var aux = (v*Math.sin(Math.radians(Dx)))/(T + Math.cos(Math.radians(Dx)))
-      Alfa = Math.cos(Math.radians(aux))/Math.sin(Math.radians(aux))
+      Alfa = 1/Math.tan(Math.radians(aux))
       Cs = T+2*T*Xde+((4+T+Xr)/(1+T))+v+2*Xdc
       B = Math.sqrt((T*T)+(2*T*v*Math.cos(Math.radians(Dx)))+(v*v));
       C = B/Cs;
@@ -906,7 +906,7 @@
 
     function atribuirM()
     {
-      m = Pm*Vr/r*Tr
+      m = (Pm*Vr)/(r*Tr)
       console.log("m = " + m)
       document.getElementById("MResult").innerHTML = "m = "+ m +" Kg.";
 
@@ -914,13 +914,17 @@
 
     function atribuirRtf()
     {
-      Rtf = (1/(hinf*Sl)) + 1/(Kcer*2*Math.PI*Li) * Math.log((Dc+(2*tcer))/Dc);
+      Rtf = (1/(hinf*Sl)) + ((1/(Kcer*2*Math.PI*Li))*Math.log((Dc+(2*tcer))/Dc));
+      console.log(Math.log(Math.E))
+      console.log(Math.log10(Math.E))
+      console.log("rtf = " + Rtf )
       document.getElementById("RtfResult").innerHTML = "Rtf = "+ Rtf +" m.K/W.";
     }
 
     function atribuirRtp()
     {
       Rtp = 1/(hinf*Ss) + tcerum/(Kcer*Ss);
+      console.log("Rtp = " + Rtp )
       document.getElementById("RtpResult").innerHTML = "Rtp = "+ Rtp +" m.K/W.";
     }   
 
@@ -930,7 +934,7 @@
       {
        Tw1 = Th;
       }
-      Tetat = (Tw1 -Tinf) / (Rtf + Rtp);
+      Tetat = (Tw1 -Tinf)/(Rtf + Rtp);
       console.log("TetaT = " + Tetat)
       document.getElementById("TetaTResult").innerHTML = "ϴt = "+ Tetat +" W/m.";
   
@@ -942,7 +946,7 @@
       {
        Tw1 = Th;
       }
-    Tf = (Tw1 + Tinf) / 2;
+    Tf = (Tw1 + Tinf)/2;
     console.log("Tf = " + Tf)
     document.getElementById("TfResult").innerHTML = "Tf = "+ Tf +" K.";
   }
@@ -956,7 +960,7 @@
 
   function atribuirY()
   {
-    y = (B*r*Math.pow(Tf, 5/2))/(patm*(s + Tf))
+    y = (b*r*Math.pow(Tf, 5/2))/(patm*(s + Tf))
     console.log("y = " + y)
     document.getElementById("YResult").innerHTML = "ƴ = "+ y +" m²/s.";
 
@@ -988,7 +992,7 @@
       {
        Tw1 = Th;
       }
-    Nu = (0.698*Math.pow(Grd, 0.209))*Math.pow((1+Math.cos(Betaum)), 0.968)*Math.pow(Tw1/Tinf, -0.317)*Math.pow(D/Dc, 0.425)
+    Nu = (0.698*Math.pow(Grd, 0.209))*Math.pow((1+Math.cos(Math.radians(Betaum))), 0.968)*Math.pow(Tw1/Tinf, -0.317)*Math.pow(D/Dc, 0.425)
     console.log("Nu = " + Nu)
     document.getElementById("NuResult").innerHTML = "Nu = "+ Nu + " .";
   }
@@ -996,7 +1000,7 @@
   var Hci = 0.0;
 
   function atribuirHci(){
-    Hci = Nu*Kf/Dc;
+    Hci = (Nu*Kf)/Dc;
     console.log("Hci = " + Hci)
     document.getElementById("HciResult").innerHTML = "Hci = "+ Hci + " W/(m².K).";
 
@@ -1009,7 +1013,7 @@
       {
        Tw1 = Th;
       }
-    Tetaci = (Hci*Math.PI*Dc*Dc/4)*(Tw1-Tinf)
+    Tetaci = ((Hci*Math.PI*Dc*Dc)/4)*(Tw1-Tinf)
     console.log("Tetaci = " + Tetaci)
     document.getElementById("TetaciResult").innerHTML = "ϴci = "+ Tetaci + " W/m.";
   }
@@ -1021,7 +1025,7 @@
       {
        Tw1 = Th;
       }
-    Tetar = A*epsiolon*sigmaMinusculo*(Math.pow(Tw1, 4)*Math.pow(Tinf, 4))
+    Tetar = (A*epsiolon*sigmaMinusculo)*(Math.pow(Tw1, 4)-Math.pow(Tinf, 4))
     console.log("Tetar = ", Tetar)
     document.getElementById("TetarResult").innerHTML = "ϴr = "+ Tetar + " W/m.";
 
@@ -1029,7 +1033,7 @@
 
   var Ein = 0.0;
   function atribuirYenEin(){
-    Ein = I*Math.PI*a*a*p/4
+    Ein = (I*Math.PI*a*a*p)/4
     console.log("I = " + I)
     console.log("Ein = " + Ein)
     document.getElementById("IRsult").innerHTML = "I = "+ I + " Wh/m².";
@@ -1046,7 +1050,7 @@
 
   var Eac = 0.0;
   function atribuirEac(){
-    Eac = (Elinhain*Math.PI*Dc*Dc/4)-Tetat-Tetaci-Tetar;
+    Eac = ((Elinhain*Math.PI*Dc*Dc)/4)-(Tetat-Tetaci-Tetar);
     console.log("Eac = " + Eac)
     document.getElementById("EacResult").innerHTML = "Eac= "+ Eac + " Wh/m.";
 
@@ -1054,7 +1058,7 @@
 
   var Th = 0.0;
   function atribuirTh(){
-    Th = (Eac/m*Cp)+Tinf
+    Th = (Eac/(m*Cp))+Tinf
     console.log("Th = " + Th)
     document.getElementById("ThResult").innerHTML = "Th = "+ Th + " K";
   }
@@ -1129,7 +1133,7 @@
   var Ei = 0.0;
   function atribuirEi()
   {
-    Ei =  (Pm*Vse*Math.PI*C*(1-T)*Math.sin(Math.radians(Alfa)))/(1+Math.sqrt(1-(C*C)))
+    Ei =  ((Pm*Vse*Math.PI*C*(1-T))*Math.sin(Math.radians(Alfa)))/(1+Math.sqrt(1-(C*C)))
     console.log("Ei = "+ Ei)
     document.getElementById("EiResult").innerHTML = "Ei = "+ Ei + " J.";
   }
