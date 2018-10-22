@@ -788,33 +788,33 @@
     var Tinf = 0.0;
    
     // Entrada padrao para testes
-    /*
-    var Dcomp = 0.068;
-    var Dexp = 0.068;
-    var Cc = 0.044;
-    var Ce = 0.044;
-    var Vtc = 0.00016;
-    var Vte = 0.00016;
-    var Vr = 0.00011;
-    var Tc = 303.0;
-    var Pm = 1.5*Math.pow(10, 7);
-    var rnominal = 25.0;
-    var a = 8.80;
-    var beta = 45.0;
-    var delta = 0.258;
-    var p = 0.94;
-    var Dc = 0.30;
-    var Kcer = 40;
-    var tcer = 0.04;
-    var tcerum = 0.20;
-    var Li = 0.35;
-    var Betaum = 90;
-    var A = 0.070;
-    var epsiolon = 0.880;
-    var I = 1080;
-    var Cp = 5193;
-    var Tw1 = 900.0;
-    var Tinf = 300.0; */
+    
+    // var Dcomp = 0.068;
+    // var Dexp = 0.068;
+    // var Cc = 0.044;
+    // var Ce = 0.044;
+    // var Vtc = 0.00016;
+    // var Vte = 0.00016;
+    // var Vr = 0.00011;
+    // var Tc = 303.0;
+    // var Pm = 1.5*Math.pow(10, 7);
+    // var rnominal = 25.0;
+    // var a = 8.80;
+    // var beta = 45.0;
+    // var delta = 0.258;
+    // var p = 0.94;
+    // var Dc = 0.30;
+    // var Kcer = 40;
+    // var tcer = 0.04;
+    // var tcerum = 0.20;
+    // var Li = 0.35;
+    // var Betaum = 90;
+    // var A = 0.070;
+    // var epsiolon = 0.880;
+    // var I = 1080;
+    // var Cp = 5193;
+    // var Tw1 = 900.0;
+    // var Tinf = 300.0;
     
 
 
@@ -860,8 +860,49 @@
     var Thum = 0.0;
     var Ei = 0.0;
     var Wi = 0.0;
-
-
+    
+    function reset() {
+      Vsc = 0.0;
+      Vse = 0.0;
+      Vdc = 0.0;
+      Vde = 0.0;
+      Xdc = 0.0;
+      Xde = 0.0;
+      Xr = 0.0;
+      v = 0.0;
+      w = 0.0;
+      D = 0.0;
+      Rei = 0.0
+      Reo = 0.0
+      Rc = 0.0
+      Sl = 0.0;
+      Ss = 0.0;
+      T = 0.0;
+      Tr = 0.0;
+      Alfa = 0.0;
+      Cs = 0.0;
+      B = 0.0;
+      C = 0.0;
+      m = 0.0;
+      Rtf = 0.0;
+      Rtp = 0.0;
+      Tetat = 0.0;
+      Tf = 0.0;
+      Kf = 0.0;
+      y = 0.0;
+      Betadois = 0.0;
+      Grd = 0.0;
+      Nu = 0.0;
+      Hci = 0.0;
+      Tetaci = 0.0;
+      Tetar = 0.0;
+      Ein = 0.0;
+      Elinhain = 0.0;
+      Eac = 0.0;
+      Ei = 0.0;
+      Wi = 0.0;
+    }  
+    
     function atribuirDimencionamentoDoMotor() {
       var entradas = 0;
       if ( document.getElementById("Dcomp").value ) {
@@ -1127,8 +1168,12 @@
      
     }
     // passo 81 func 4.12
-    function atribuirTTr()
+    function atribuirTTr(tipo)
     {
+      if(tipo)
+      {
+       Tw1 = Th;
+      }
       T = Tc/Tw1;
       Tr = (Tw1+Tc)/2
       document.getElementById("TResult").innerHTML = "T = "+ T;
@@ -1141,6 +1186,7 @@
 
     function atribuirAlfaCsBC(tipo){
       var aux = (v*Math.sin(Math.radians(Dx)))/(T + Math.cos(Math.radians(Dx)))
+      console.log("aux: ", aux)
       Alfa = 1/Math.tan(Math.radians(aux))
       Cs = T+2*T*Xde+((4+T+Xr)/(1+T))+v+2*Xdc
       B = Math.sqrt((T*T)+(2*T*v*Math.cos(Math.radians(Dx)))+(v*v));
@@ -1184,7 +1230,7 @@
 
     //5.10
     function atribuirTetaT(tipo){
-      if(tipo === 'th1')
+      if(tipo)
       {
        Tw1 = Th;
       }
@@ -1197,7 +1243,7 @@
 
   function atribuirTf(tipo)
   {
-    if(tipo === 'th1')
+    if(tipo)
       {
        Tw1 = Th;
       }
@@ -1236,7 +1282,7 @@
   }
 
   function atribuirGrd(tipo){
-    if(tipo === 'th1')
+    if(tipo)
       {
        Tw1 = Th;
       }
@@ -1248,7 +1294,7 @@
   }
 
   function atribuirNu(tipo){
-    if(tipo === 'th1')
+    if(tipo)
       {
        Tw1 = Th;
       }
@@ -1268,7 +1314,7 @@
   }
 
   function atribuirTetaci(tipo){
-    if(tipo === 'th1')
+    if(tipo)
       {
        Tw1 = Th;
       }
@@ -1279,7 +1325,7 @@
   }
 
   function atribuirTetar(tipo){
-    if(tipo === 'th1')
+    if(tipo)
       {
        Tw1 = Th;
       }
@@ -1318,10 +1364,10 @@
 
   function atribuirTh(tipo){
     Th = (Eac/(m*Cp))+Tinf
-   
+    console.log("Th = " + Th)
     if(!tipo) {
-      console.log(tipo)
-      console.log("Th = " + Th)
+      console.log("tipo: ,", tipo)
+      //console.log("Th = " + Th)
       document.getElementById("ThResult").innerHTML = "Th = "+ Th + " K";
     }
      
@@ -1332,8 +1378,10 @@
     var Tw1Aux = Tw1
     var cont = 0
     var lastThCalculed = Th
+    //reset()
     do {
       lastThCalculed = Th
+
       await atribuirTetaT('th1');
       await atribuirTf('th1')
       await atribuirKf('again')
@@ -1358,6 +1406,14 @@
   }
 
   function  atribuirTudoDeNovo(){
+
+    // teste
+    atribuirTTr('th1')
+    atribuirAlfaCsBC('again')
+    atribuirM('again')
+    atribuirRtf('again')
+    atribuirRtp('again')
+    // fim teste
 
     atribuirTTr('again')
     atribuirAlfaCsBC('again')
