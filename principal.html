@@ -1176,10 +1176,12 @@
       }
       T = Tc/Tw1;
       Tr = (Tw1+Tc)/2
-      document.getElementById("TResult").innerHTML = "T = "+ T;
-      document.getElementById("TrResult").innerHTML = "Tr = "+ Tr +" K.";
-     console.log("T = "+T)
-     console.log("Tr = "+Tr)
+      if(!tipo) {
+        document.getElementById("TResult").innerHTML = "T = "+ T;
+        document.getElementById("TrResult").innerHTML = "Tr = "+ Tr +" K.";
+      }
+      console.log("T = "+T)
+      console.log("Tr = "+Tr)
       $("#atribuirTTrOK").addClass("fa fa-check");
     }
 
@@ -1382,6 +1384,12 @@
     do {
       lastThCalculed = Th
 
+      await atribuirTTr('th1')
+      await atribuirAlfaCsBC('again')
+      await atribuirM('again')
+      await atribuirRtf('again')
+      await atribuirRtp('again')
+
       await atribuirTetaT('th1');
       await atribuirTf('th1')
       await atribuirKf('again')
@@ -1397,7 +1405,7 @@
       await atribuirEac('again')
       await atribuirTh('again')
       cont = cont + 1
-    } while (Th-lastThCalculed > 0.001)
+    } while (Th-Tw1Aux > 0.001)
     Tw1 = Tw1Aux;
     Thum = Th;
     console.log("Thum = " + Thum)
@@ -1405,34 +1413,34 @@
     $("#atribuirThumOK").addClass("fa fa-check");
   }
 
-  function  atribuirTudoDeNovo(){
+  async function  atribuirTudoDeNovo(){
 
     // teste
-    atribuirTTr('th1')
-    atribuirAlfaCsBC('again')
-    atribuirM('again')
-    atribuirRtf('again')
-    atribuirRtp('again')
+    await atribuirTTr('th1')
+    await atribuirAlfaCsBC('again')
+    await atribuirM('again')
+    await atribuirRtf('again')
+    await atribuirRtp('again')
     // fim teste
-
-    atribuirTTr('again')
-    atribuirAlfaCsBC('again')
-    atribuirM('again')
-    atribuirRtf('again')
-    atribuirRtp('again')
-    atribuirTetaT('again')
-    atribuirTf('again')
-    atribuirKf('again')
-    atribuirY('again')
-    atrbuirBetadois('again')
-    atribuirGrd('again')
-    atribuirNu('again')
-    atribuirHci('again')
-    atribuirTetaci('again')
-    atribuirTetar('again')
-    atribuirYenEin('again')
-    atribuirElinhain('again')
-    atribuirEac('again')
+    
+    await atribuirTTr('again')
+    await atribuirAlfaCsBC('again')
+    await atribuirM('again')
+    await atribuirRtf('again')
+    await atribuirRtp('again')
+    await atribuirTetaT('again')
+    await atribuirTf('again')
+    await atribuirKf('again')
+    await atribuirY('again')
+    await atrbuirBetadois('again')
+    await atribuirGrd('again')
+    await atribuirNu('again')
+    await atribuirHci('again')
+    await atribuirTetaci('again')
+    await atribuirTetar('again')
+    await atribuirYenEin('again')
+    await atribuirElinhain('again')
+    await atribuirEac('again')
 
     document.getElementById("TResultAgain").innerHTML = "T = "+ T;
     document.getElementById("TrResultAgain").innerHTML = "Tr = "+ Tr +" K.";
