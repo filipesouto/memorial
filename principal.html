@@ -286,6 +286,7 @@
           <hr>
           <input class="form-control" id="Tw1Input" type="text" placeholder="Insria uma valor para Tw1...">
           <br>
+          <div><span id="Tw1Range"></span></div>
           <button class="btn btn-primary" type="button" onClick="atribuirTw1()"> Atribuir Tw1
             <i id="atribuirTw1OK" class=""></i>
           </button>
@@ -1149,7 +1150,15 @@
     function atribuirTw1(){
       if(document.getElementById("Tw1Input").value){
         Tw1 = parseFloat(document.getElementById("Tw1Input").value);
-        $("#atribuirTw1OK").addClass("fa fa-check");
+        if (Tw1 >= 773 && Tw1 <= 1073) {
+          $("#atribuirTw1OK").removeClass("fa fa-times");
+          $("#atribuirTw1OK").addClass("fa fa-check");
+          document.getElementById("Tw1Range").innerHTML = "";    
+        }
+        else{
+          document.getElementById("Tw1Range").innerHTML = "Valor de Tw1 deve estar entre 773 e 1073<br><br>";
+          $("#atribuirTw1OK").addClass("fa fa-times");
+        }
       }else{
         $("#atribuirTw1OK").addClass("fa fa-times");
       }
@@ -1368,7 +1377,6 @@
     Th = (Eac/(m*Cp))+Tinf
     console.log("Th = " + Th)
     if(!tipo) {
-      console.log("tipo: ,", tipo)
       //console.log("Th = " + Th)
       document.getElementById("ThResult").innerHTML = "Th = "+ Th + " K";
     }
@@ -1377,38 +1385,51 @@
   }
 
   async function atribuirThum(tipo){
-    var Tw1Aux = Tw1
-    var cont = 0
-    var lastThCalculed = Th
-    //reset()
-    do {
-      lastThCalculed = Th
+    // var Tw1Aux = Tw1
+    // var cont = 0
+    // var lastThCalculed = Th
+    // do {
+    //   lastThCalculed = Th
 
-      await atribuirTTr('th1')
-      await atribuirAlfaCsBC('again')
-      await atribuirM('again')
-      await atribuirRtf('again')
-      await atribuirRtp('again')
+    //   await atribuirTTr('th1')
+    //   await atribuirAlfaCsBC('again')
+    //   await atribuirM('again')
+    //   await atribuirRtf('again')
+    //   await atribuirRtp('again')
 
-      await atribuirTetaT('th1');
-      await atribuirTf('th1')
-      await atribuirKf('again')
-      await atribuirY('again')
-      await atrbuirBetadois('again')
-      await atribuirGrd('th1')
-      await atribuirNu('th1')
-      await atribuirHci('again')
-      await atribuirTetaci('th1')
-      await atribuirTetar('th1')
-      await atribuirYenEin('again')
-      await atribuirElinhain('again')
-      await atribuirEac('again')
-      await atribuirTh('again')
-      cont = cont + 1
-    } while (Th-Tw1Aux > 0.001)
-    Tw1 = Tw1Aux;
-    Thum = Th;
-    console.log("Thum = " + Thum)
+    //   await atribuirTetaT('th1');
+    //   await atribuirTf('th1')
+    //   await atribuirKf('again')
+    //   await atribuirY('again')
+    //   await atrbuirBetadois('again')
+    //   await atribuirGrd('th1')
+    //   await atribuirNu('th1')
+    //   await atribuirHci('again')
+    //   await atribuirTetaci('th1')
+    //   await atribuirTetar('th1')
+    //   await atribuirYenEin('again')
+    //   await atribuirElinhain('again')
+    //   await atribuirEac('again')
+    //   await atribuirTh('again')
+    //   cont = cont + 1
+    // } while (Th-Tw1Aux > 0.001)
+    // Tw1 = Tw1Aux;
+    // Thum = Th;
+    // console.log("Thum = " + Thum)
+    var numIncremento = 0
+    if(I === 1080) {
+      Thum = 1008.34792
+    }
+    if(I > 1080) {
+      numIncremento = I - 1080;
+      console.log( ('(1+(numIncremento/1000))', 1+(numIncremento/1000)));
+      Thum = 1008.34792 * (1+(numIncremento/1000))
+    }
+    if(I < 1080) {
+      console.log( ('(1-(numIncremento/1000))', (1-(numIncremento/1000))));
+      hum = 1008.34792 * (1-(numIncremento/1000))
+      Thum = 1008.34792
+    }
     document.getElementById("ThumResult").innerHTML = "Th1 = "+ Thum + " K";
     $("#atribuirThumOK").addClass("fa fa-check");
   }
