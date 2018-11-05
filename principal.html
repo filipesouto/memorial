@@ -1181,7 +1181,7 @@
     {
       if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
       T = Tc/Tw1;
       Tr = (Tw1+Tc)/2
@@ -1243,7 +1243,7 @@
     function atribuirTetaT(tipo){
       if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
       Tetat = (Tw1 -Tinf)/(Rtf + Rtp);
      console.log("TetaT = " + Tetat)
@@ -1256,7 +1256,7 @@
   {
     if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
     Tf = (Tw1 + Tinf)/2;
    console.log("Tf = " + Tf)
@@ -1295,7 +1295,7 @@
   function atribuirGrd(tipo){
     if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
     Grd = (g*Betadois*(Tw1-Tinf)*Math.pow(Dc, 3))/(y*y)
    console.log("Grd = " + Grd)
@@ -1307,7 +1307,7 @@
   function atribuirNu(tipo){
     if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
     Nu = (0.698*Math.pow(Grd, 0.209))*Math.pow((1+Math.cos(Math.radians(Betaum))), 0.968)*Math.pow(Tw1/Tinf, -0.317)*Math.pow(D/Dc, 0.425)
    console.log("Nu = " + Nu)
@@ -1327,7 +1327,7 @@
   function atribuirTetaci(tipo){
     if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
     Tetaci = ((Hci*Math.PI*Dc*Dc)/4)*(Tw1-Tinf)
    console.log("Tetaci = " + Tetaci)
@@ -1338,7 +1338,7 @@
   function atribuirTetar(tipo){
     if(tipo)
       {
-       Tw1 = Th;
+       Tw1 = Thum;
       }
     Tetar = (A*epsiolon*sigmaMinusculo)*(Math.pow(Tw1, 4)-Math.pow(Tinf, 4))
    console.log("Tetar = ", Tetar)
@@ -1426,9 +1426,9 @@
       Thum = 1008.34792 * (1+(numIncremento/1000))
     }
     if(I < 1080) {
+      numIncremento = 1080 - I;
       console.log( ('(1-(numIncremento/1000))', (1-(numIncremento/1000))));
-      hum = 1008.34792 * (1-(numIncremento/1000))
-      Thum = 1008.34792
+      Thum = 1008.34792 * (1-(numIncremento/1000))
     }
     document.getElementById("ThumResult").innerHTML = "Th1 = "+ Thum + " K";
     $("#atribuirThumOK").addClass("fa fa-check");
@@ -1436,14 +1436,6 @@
 
   async function  atribuirTudoDeNovo(){
 
-    // teste
-    await atribuirTTr('th1')
-    await atribuirAlfaCsBC('again')
-    await atribuirM('again')
-    await atribuirRtf('again')
-    await atribuirRtp('again')
-    // fim teste
-    
     await atribuirTTr('again')
     await atribuirAlfaCsBC('again')
     await atribuirM('again')
@@ -1496,7 +1488,8 @@
 
   function atribuirWi()
   {
-    Wi = Ei*rnominal
+   // Wi = Ei*rnominal
+   Wi =  (0.0134 * I) - 4.69
    console.log("Wi = " + Wi)
     document.getElementById("WiResult").innerHTML = "Wi = "+ Wi + " W.";
     $("#atribuirWiOK").addClass("fa fa-check");
