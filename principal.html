@@ -217,7 +217,7 @@
               <hr>
               <div class="form-group row">
                   <div class="col-4">
-                    <label for="ex1">Qual a irradiação incidente no local (I)?</label>
+                    <label for="ex1">Qual a irradiação incidente no local (I), em W.h/m²?</label>
                     <input class="form-control" id="I" type="text" placeholder="Insria uma valor para I...">
                   </div>
               </div>
@@ -232,7 +232,7 @@
               <hr>
               <div class="form-group row">
                   <div class="col-4">
-                    <label for="ex1">Qual o calor específico (Cp) do fluido de trabalho?</label>
+                    <label for="ex1">Qual o calor específico (Cp) do fluido de trabalho, em J/Kg.K?</label>
                     <input class="form-control" id="Cp" type="text" placeholder="Insria uma valor para Cp...">
                   </div>
               </div>
@@ -243,7 +243,6 @@
         </div>
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Os dimensionamentos, a irradiação local e as especificações do fluido de trabalho são definidas para serem utilizadas em alguns cálculos prévios necessários para a realização do projeto.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirVscVseVdcVdeXdcXdeXrV()"> Gerar Calculo
             <i id="atribuirVscVseVdcVdeXdcXdeXrVOK" class=""></i>
@@ -253,7 +252,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Podemos também definir o tamanho da imagem focal (W) que será interceptada no plano focal do receptor, além do diâmetro da entrada do receptor (d), dos raios interno (Rei) e externo (Reo) do receptor e raio do diâmetro interno (Rc) do receptor.</h3>
+          <h3>Tamanho da imagem focal (W) e o diâmetro de entrada do receptor (d).</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirWDReiReoRc()"> Gerar Calculo
             <i id="atribuirWDReiReoRcOK" class=""></i>
@@ -272,7 +271,6 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Além disso, podemos definir as áreas interna da parte da frente do receptor (SL) e do fundo (SS), muito importante para os cálculos das resistências térmicas internas do receptor.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirSL()"> Gerar Calculo
             <i id="atribuirSLOK" class=""></i>
@@ -282,7 +280,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Para o início da apresentação dos cálculos, será necessário assumir uma temperatura arbitrária incidente no interior do receptor solar, chamada de Tw1. Esta temperatura é consequência da irradiação solar concentrada pelo coletor parabólico no receptor. Após uma análise dos variados tipos de receptores solares existentes no mercado para os sistemas Disco-Stirling, notou-se uma variação padrão para as temperaturas internas destes, entre 500°C (773K) e 800°C (1073K). Portanto, qual o valor da temperatura assumida Tw1, em K?</h3>
+          <h3>Será necessário assumir uma temperatura arbitrária incidente no interior do receptor solar, chamada Tw1. Esta temperatura é consequência da irradiação solar concentrada pelo coletor parabólico no receptor. Para os sistemas Disco-Stirling, notou-se uma variação padrão para as temperaturas internas na faixa de 773K e 1073K. De acordo com esta faixa, qual a temperatura assumida Tw1, em K?</h3>
           <hr>
           <input class="form-control" id="Tw1Input" type="text" placeholder="Insria uma valor para Tw1...">
           <br>
@@ -310,23 +308,17 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Com a temperatura interna do receptor definida (Tw1), agora podemos realizar alguns cálculos para descobrir a potência fornecida pelo motor Stirling. Começaremos pelo cálculo da temperatura relativa ‘t’, que é a razão entre a temperatura do fluido de trabalho na câmara de compressão do motor (Tc) e Th1.  Posteriormente, esta temperatura Tw1 será transformada em Th1, que será uma temperatura mais aproximada da temperatura real.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTTr()"> Gerar Calculo
             <i id="atribuirTTrOK" class=""></i>
           </button>
           <br>
           <br>
-          <ul>
-          <li><div><span id="TResult"><h3>t = </h3> </span></div>  </li>
-          <li><div><span id="TrResult"><h3>Tr = </h3> </span></div>  </li>
-        </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Sabendo a temperatura relativa, devemos agora verificar a pressão média do motor. Devido à complexidade e tamanho das fórmulas, se faz necessário calcular alguns coeficientes simplificadores, chamados coeficientes de Suntherland. São estes: alfa, cS, B e c.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirAlfaCsBC()"> Gerar Calculo
             <i id="atribuirAlfaCsBCOK" class=""></i>
@@ -336,59 +328,40 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Podemos também calcular a massa de fluido de trabalho (m) presente no motor.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirM()"> Gerar Calculo
             <i id="atribuirMOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li><div><span id="MResult"><h3>m = </h3> </span></div></li>
-              </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Com as temperaturas Tw1 e T∞ definidas, podemos iniciar os cálculos. Começando pela quantificação da resistência térmica na parte superior do receptor solar, Rtf.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirRtf()"> Gerar Calculo
             <i id="atribuirRtfOK" class=""></i>
           </button>
           <br>  
-          <br> 
-          <ul>
-              <li> <div><span id="RtfResult"><h3>Rtf = </h3> </span></div></li>
-          </ul>
+          <br>
         </div>
       </div>
 
       <div class="row">
           <div class="col-sm mb-3">
-            <h3>Agora podemos calcular a resistência térmica na parte inferior do receptor solar, Rtp.</h3>
             <hr>
             <button class="btn btn-primary" type="button" onClick="atribuirRtp()"> Gerar Calculo
               <i id="atribuirRtpOK" class=""></i>
             </button>
             <br>  
             <br> 
-            <ul>
-            <li><div><span id="RtpResult"><h3>Rtp = </h3> </span></div></li>
-            </ul>
           </div>
         </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Para os cálculos realizados tanto para a parte superior quanto para a parte inferior do receptor solar, as resistências térmicas foram relacionadas à convecção externa e pela condução térmica através da parede cerâmica do receptor.</h3>
-          <hr>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm mb-3">
-          <h3>Sendo assim, a perda total de energia no receptor solar, relacionada à convecção externa e condução, ϴt, será de:</h3>
+          <h3>A perda total de energia no receptor solar, relacionado à convecção externa e condução na parede de cerâmica é:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTetaT()"> Gerar Calculo
             <i id="atribuirTetaTOK" class=""></i>
@@ -403,67 +376,49 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Para a continuação dos cálculos, devemos agora calcular a temperatura de filme, Tf.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTf()"> Gerar Calculo
             <i id="atribuirTfOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li> <div><span id="TfResult"><h3>Tf = </h3> </span></div></li>
-              </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Sabendo qual o valor da temperatura de filme, agora podemos calcular o coeficiente de condução térmica do ar, kf. Este coeficiente será importante para os cálculos de transferências de calor por convecção no interior do receptor.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirKf()"> Gerar Calculo
             <i id="atribuirKfOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li> <div><span id="KfResult"><h3>kf = </h3> </span></div></li>
-            </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Outro fator que nós podemos avaliar posteriormente ao cálculo da temperatura de filme é a viscosidade cinemática do ar, ƴ.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirY()"> Gerar Calculo
             <i id="atribuirYOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li><div><span id="YResult"><h3>ƴ =  </h3> </span></div></li>
-              </ul>
         </div>
       </div>
 
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Para facilitar os cálculos, será necessário também o cálculo de β2, que nada mais é do que o inverso da temperatura de filme Tf.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atrbuirBetadois()"> Gerar Calculo
             <i id="atrbuirBetadoisOK" class=""></i>
           </button>
-          <ul>
-              <li><div><span id="BdoisResult"><h3>β2 =  </h3> </span></div></li>
-              </ul>
-
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Com os valores de β2 e ƴ definidos, podemos agora calcular o valor no número de Grashof, GrD, muito importante para o cálculo de transferência de calor por convecção no interior do receptor solar.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirGrd()"> Gerar Calculo
             <i id="atribuirGrdOK" class=""></i>
@@ -478,37 +433,29 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Sabendo o valor do número de Grashof, podemos agora calcular o valor do número de Nusselt (Nu) para, posteriormente, calcular o coeficiente de convecção interno (hci) da cavidade do receptor solar.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirNu()"> Gerar Calculo
             <i id="atribuirNuOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li><div><span id="NuResult"><h3>Nu =  </h3> </span></div></li>
-              </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Agora, com o número de Nusselt e o coeficiente de condução térmica do ar calculados, podemos avaliar o coeficiente de transferência de calor por convecção interna da cavidade do receptor solar, hci.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirHci()"> Gerar Calculo
             <i id="atribuirHciOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li> <div><span id="HciResult"><h3>hci =  </h3> </span></div></li>
-              </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Com o coeficiente de transferência de calor por convecção calculado, agora podemos definir o valor da perda total de energia por transferência de calor no interior da cavidade do receptor solar, ϴci.</h3>
+          <h3>O valor da perda total de energia por transferência de calor no interior da cavidade do receptor solar:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTetaci()"> Gerar Calculo
             <i id="atribuirTetaciOK" class=""></i>
@@ -523,7 +470,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Outro importante fator a ser calculado é a perda total de energia referente a reemissão de radiação no absorvedor do receptor, ϴr, já que este equipamento opera em elevadas temperaturas, as perdas por radiação devem ser consideradas.</h3>
+          <h3>Pelo fato de o equipamento operar em elevadas temperaturas, as perdas por reemissão de radiação devem ser consideradas. Portanto:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTetar()"> Gerar Calculo
             <i id="atribuirTetarOK" class=""></i>
@@ -538,23 +485,18 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Definidas as perdas energéticas do conjunto receptor, concentrador e absorvedor solar, agora podemos calcular a energia interceptada pelo coletor solar, Ein. Para isto, foi necessário fazer um estudo da média da irradiação solar (I) incidida em São Mateus no último ano.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirYenEin()"> Gerar Calculo
             <i id="atribuirYenEinOK" class=""></i>
           </button>
           <br>  
           <br> 
-          <ul>
-              <li><div><span id="IRsult"><h3>I =  </h3> </span></div></li>
-          <li><div><span id="EinResult"><h3>Ein =  </h3> </span></div></li>
-          </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Agora podemos calcular o fluxo médio de calor interceptado pelo receptor, E’in.</h3>
+          <h3>O fluxo médio de calor interceptado pelo receptor:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirElinhain()"> Gerar Calculo
             <i id="atribuirElinhainOK" class=""></i>
@@ -569,7 +511,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Sabendo o fluxo médio de calor interceptado pelo receptor, multiplicando pela área do absorvedor e retirando as perdas térmicas de condução, convecção interna, externa e reemissão de radiação, podemos agora avaliar a energia acumulada pelo absorvedor solar, Eac.</h3>
+          <h3>Sabendo o fluxo médio de calor interceptado pelo receptor, a área do absorvedor e retirando todas as perdas térmicas, têm-se a energia acumulada pelo absorvedor:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirEac()"> Gerar Calculo
             <i id="atribuirEacOK" class=""></i>
@@ -582,17 +524,9 @@
         </div>
       </div>
 
-
       <div class="row">
         <div class="col-sm mb-3">
-          <h2>Adotamos a energia acumulada pelo absorvedor sendo totalmente transferida para o nosso fluido de trabalho escolhido.</h2>
-          <hr>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm mb-3">
-          <h3>Sabendo disso, agora podemos mensurar a suposta real temperatura interna no receptor solar, Th.</h3>
+          <h3>Considerando a energia acumulada pelo absorvedor sendo totalmente transferida para o fluido de trabalho, pode-se mensurar uma suposta real temperatura interna no receptor (Th). Sendo assim:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTh()"> Gerar Calculo
             <i id="atribuirThOK" class=""></i>
@@ -608,7 +542,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Esta temperatura Th calculada será utilizada como referência para a seguinte iteração: Th deve ser comparada com a temperatura interna assumida no início dos cálculos, Tw1. Enquanto <b>Th – Tw1 > 0,001</b>, deve-se adotar (atribuir) esta nova temperatura Th no lugar de Tw1 e realizar todos os processos a partir do passo 81), até que <b>Th-Tw1 = 0,001</b>. Quando isto acontecer, este novo valor de Th será a nova temperatura interna estabelecida e correta, Th1.</h3>
+          <h3>Esta temperatura Th calculada será utilizada como referência para a seguinte iteração: Th deve ser comparada com a temperatura interna escolhida no início do programa, Tw1. Enquanto Th-Tw1 > 0,001, deve-se adotar esta nova temperatura Th no lugar de Tw1 e realizar novamente todos os cálculos até que Th-Tw1= 0,001. Quando isto acontecer, este novo valor de Th será a nova temperatura interna estabelecida e correta, Th1.</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirThum()"> Calcular Th1
             <i id="atribuirThumOK" class=""></i>
@@ -624,7 +558,7 @@
 
       <div class="row">
         <div class="col-sm mb-3">
-          <h3>Com a nova temperatura Th1 definida, voltaremos agora ao passo 81) e faremos todas os cálculos novamente (pulando os passos 141), 142), 143), 144), 145),  e 146), visto que a temperatura mais aproximada já foi encontrada) utilizando a nova temperatura Th1 que resultará nos valores mais aproximados em todas as variáveis calculadas.</h3>
+          <h3>Realizando os cálculos utilizando a temperatura Th1, temos:</h3>
           <hr>
           <button class="btn btn-primary" type="button" onClick="atribuirTudoDeNovo()"> Gerar Calculo
               <i id="atribuirTudoDeNovoOK" class=""></i>
@@ -658,23 +592,19 @@
 
       <div class="row">
           <div class="col-sm mb-3">
-            <h3>Definidos todos os novos valores das variáveis anteriores, podemos agora avaliar a energia indicada no motor, Ei.</h3>
             <hr>
             <button class="btn btn-primary" type="button" onClick="atribuirEi()"> Gerar Calculo
               <i id="atribuirEiOK" class=""></i>
             </button>
             <br>  
             <br> 
-            <ul>
-                <li> <div><span id="EiResult"><h3>Ei =  </h3> </span></div></li>
-                </ul>
           </div>
         </div>
 
 
         <div class="row">
             <div class="col-sm mb-3">
-              <h3>Finalmente, podemos agora avaliar qual será a potência fornecida Wi, pelo motor Stirling SOLO V161, através da captação da energia solar.</h3>
+              <h3>Finalmente pode-se mensurar a potência (Wi) gerada pelo motor Stirling SOLO V161:</h3>
               <hr>
               <button class="btn btn-primary" type="button" onClick="atribuirWi()"> Gerar Calculo
                 <i id="atribuirWiOK" class=""></i>
@@ -688,22 +618,15 @@
           </div>
 
           <div class="row">
-              <div class="col-sm mb-3">
-                <h3>Portanto, para uma temperatura interna do receptor de (valor de Th1 encontrada em 145), em K), uma temperatura ambiente em (valor de T∞ encontrada em 79), em K) e uma irradiação solar de (valor de ¥ encontrada em 130), em Wh/m²), temos uma potência fornecida pelo motor Stirling SOLO V161 de (valor de Wi encontrado em 152), em W).</h3>
-                <hr>
-              </div>
+            <div class="col-sm mb-3">
+              <h1>Conclusões</h1>
             </div>
-
-            <div class="row">
-              <div class="col-sm mb-3">
-                <h1>Conclusões</h1>
-              </div>
-            </div>
+          </div>
   
 
 <!-- PAROU AQUI -->
 
-      <!-- Area Chart Example-->
+      <!-- Area Chart Example
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-area-chart"></i> Area Chart Example</div>
@@ -711,7 +634,7 @@
           <canvas id="myAreaChart" width="100%" height="30"></canvas>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
+      </div>-->
       <div class="row">
         <div class="col-lg-8">      
         </div>
@@ -1186,8 +1109,8 @@
       T = Tc/Tw1;
       Tr = (Tw1+Tc)/2
       if(!tipo) {
-        document.getElementById("TResult").innerHTML = "T = "+ T;
-        document.getElementById("TrResult").innerHTML = "Tr = "+ Tr +" K.";
+       // document.getElementById("TResult").innerHTML = "T = "+ T;
+       // document.getElementById("TrResult").innerHTML = "Tr = "+ Tr +" K.";
       }
       console.log("T = "+T)
       console.log("Tr = "+Tr)
@@ -1214,7 +1137,7 @@
       m = (Pm*Vr)/(r*Tr)
      console.log("m = " + m)
       if(!tipo)
-        document.getElementById("MResult").innerHTML = "m = "+ m +" Kg.";
+        // document.getElementById("MResult").innerHTML = "m = "+ m +" Kg.";
       $("#atribuirMOK").addClass("fa fa-check");
 
     }
@@ -1226,7 +1149,7 @@
      console.log(Math.log10(Math.E))
      console.log("rtf = " + Rtf )
       if(!tipo)
-        document.getElementById("RtfResult").innerHTML = "Rtf = "+ Rtf +" m.K/W.";
+       // document.getElementById("RtfResult").innerHTML = "Rtf = "+ Rtf +" m.K/W.";
       $("#atribuirRtfOK").addClass("fa fa-check");
     }
 
@@ -1235,7 +1158,7 @@
       Rtp = 1/(hinf*Ss) + tcerum/(Kcer*Ss);
      console.log("Rtp = " + Rtp )
       if(!tipo)
-        document.getElementById("RtpResult").innerHTML = "Rtp = "+ Rtp +" m.K/W.";
+       // document.getElementById("RtpResult").innerHTML = "Rtp = "+ Rtp +" m.K/W.";
       $("#atribuirRtpOK").addClass("fa fa-check");
     }   
 
@@ -1261,7 +1184,7 @@
     Tf = (Tw1 + Tinf)/2;
    console.log("Tf = " + Tf)
     if(!tipo)
-      document.getElementById("TfResult").innerHTML = "Tf = "+ Tf +" K.";
+      // document.getElementById("TfResult").innerHTML = "Tf = "+ Tf +" K.";
     $("#atribuirTfOK").addClass("fa fa-check");
   }
 
@@ -1270,7 +1193,7 @@
     Kf = 0.024 + (0.00007*Tf)
    console.log("Kf = " + Kf)
     if(!tipo)
-      document.getElementById("KfResult").innerHTML = "Kf = "+ Kf +" W/m.K.";
+     // document.getElementById("KfResult").innerHTML = "Kf = "+ Kf +" W/m.K.";
     $("#atribuirKfOK").addClass("fa fa-check");
   }
 
@@ -1279,7 +1202,7 @@
     y = (b*r*Math.pow(Tf, 5/2))/(patm*(s + Tf))
    console.log("y = " + y)
     if(!tipo)
-      document.getElementById("YResult").innerHTML = "ƴ = "+ y +" m²/s.";
+      // document.getElementById("YResult").innerHTML = "ƴ = "+ y +" m²/s.";
     $("#atribuirYOK").addClass("fa fa-check");
   }
   
@@ -1288,7 +1211,7 @@
     Betadois = 1/Tf;
    console.log("β2 = "+Betadois);
     if(!tipo)
-      document.getElementById("BdoisResult").innerHTML = "β2 = "+ Betadois +" K^-1.";
+      // document.getElementById("BdoisResult").innerHTML = "β2 = "+ Betadois +" K^-1.";
     $("#atrbuirBetadoisOK").addClass("fa fa-check");
   }
 
@@ -1312,7 +1235,7 @@
     Nu = (0.698*Math.pow(Grd, 0.209))*Math.pow((1+Math.cos(Math.radians(Betaum))), 0.968)*Math.pow(Tw1/Tinf, -0.317)*Math.pow(D/Dc, 0.425)
    console.log("Nu = " + Nu)
     if(!tipo)
-      document.getElementById("NuResult").innerHTML = "Nu = "+ Nu + " .";
+     // document.getElementById("NuResult").innerHTML = "Nu = "+ Nu + " .";
     $("#atribuirNuOK").addClass("fa fa-check");
   }
 
@@ -1320,7 +1243,7 @@
     Hci = (Nu*Kf)/Dc;
    console.log("Hci = " + Hci)
     if(!tipo)
-      document.getElementById("HciResult").innerHTML = "Hci = "+ Hci + " W/(m².K).";
+      // document.getElementById("HciResult").innerHTML = "Hci = "+ Hci + " W/(m².K).";
     $("#atribuirHciOK").addClass("fa fa-check");
   }
 
@@ -1351,8 +1274,8 @@
    console.log("I = " + I)
    console.log("Ein = " + Ein)
     if(!tipo){
-      document.getElementById("IRsult").innerHTML = "I = "+ I + " Wh/m².";
-      document.getElementById("EinResult").innerHTML = "Ein = "+ Ein + " Wh.";
+      // document.getElementById("IRsult").innerHTML = "I = "+ I + " Wh/m².";
+      // document.getElementById("EinResult").innerHTML = "Ein = "+ Ein + " Wh.";
     }
     $("#atribuirYenEinOK").addClass("fa fa-check");
   }
@@ -1482,14 +1405,14 @@
   {
     Ei =  ((Pm*Vse*Math.PI*C*(1-T))*Math.sin(Math.radians(Alfa)))/(1+Math.sqrt(1-(C*C)))
    console.log("Ei = "+ Ei)
-    document.getElementById("EiResult").innerHTML = "Ei = "+ Ei + " J.";
+    // document.getElementById("EiResult").innerHTML = "Ei = "+ Ei + " J.";
     $("#atribuirEiOK").addClass("fa fa-check");
   }
 
   function atribuirWi()
   {
    // Wi = Ei*rnominal
-   Wi =  (0.0134 * I) - 4.69
+   Wi = (0.0134 * I) - ((4.29*Tw1)/1000);
    console.log("Wi = " + Wi)
     document.getElementById("WiResult").innerHTML = "Wi = "+ Wi + " W.";
     $("#atribuirWiOK").addClass("fa fa-check");
