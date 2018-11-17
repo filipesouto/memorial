@@ -484,17 +484,7 @@
                   </ul>
             </div>
           </div>
-<!-- PAROU AQUI -->
 
-      <!-- Area Chart Example
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-area-chart"></i> Area Chart Example</div>
-        <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>-->
       <div class="row">
         <div class="col-lg-8">      
         </div>
@@ -572,7 +562,6 @@
     var Tinf = 0.0;
    
     // Entrada padrao para testes
-    
     // var Dcomp = 0.068;
     // var Dexp = 0.068;
     // var Cc = 0.044;
@@ -599,8 +588,6 @@
     // var Cp = 5193;
     // var Tw1 = 900.0;
     // var Tinf = 300.0;
-    
-
 
     //Variaveis
     var Vsc = 0.0;
@@ -1179,37 +1166,6 @@
   }
 
   async function atribuirThum(tipo){
-    // var Tw1Aux = Tw1
-    // var cont = 0
-    // var lastThCalculed = Th
-    // do {
-    //   lastThCalculed = Th
-
-    //   await atribuirTTr('th1')
-    //   await atribuirAlfaCsBC('again')
-    //   await atribuirM('again')
-    //   await atribuirRtf('again')
-    //   await atribuirRtp('again')
-
-    //   await atribuirTetaT('th1');
-    //   await atribuirTf('th1')
-    //   await atribuirKf('again')
-    //   await atribuirY('again')
-    //   await atrbuirBetadois('again')
-    //   await atribuirGrd('th1')
-    //   await atribuirNu('th1')
-    //   await atribuirHci('again')
-    //   await atribuirTetaci('th1')
-    //   await atribuirTetar('th1')
-    //   await atribuirYenEin('again')
-    //   await atribuirElinhain('again')
-    //   await atribuirEac('again')
-    //   await atribuirTh('again')
-    //   cont = cont + 1
-    // } while (Th-Tw1Aux > 0.001)
-    // Tw1 = Tw1Aux;
-    // Thum = Th;
-    // console.log("Thum = " + Thum)
     var numIncremento = 0
     if(I === 1080) {
       Thum = 1008.34792
@@ -1277,14 +1233,11 @@
   {
     Ei =  ((Pm*Vse*Math.PI*C*(1-T))*Math.sin(Math.radians(Alfa)))/(1+Math.sqrt(1-(C*C)))
    console.log("Ei = "+ Ei)
-    // document.getElementById("EiResult").innerHTML = "Ei = "+ Ei + " J.";
     $("#atribuirEiOK").addClass("fa fa-check");
   }
 
   function atribuirWi()
   {
-   // Wi = Ei*rnominal
-   // Wi = (0.0134 * I) - ((4.29*Tw1)/1000);
    Wi = (((0.0134*I*Ei)/159)-((4.29*Tw1)/1000))*((rnominal*p)/23.5)*(298/Tinf);
    console.log("Wi = " + Wi)
     document.getElementById("WiResult").innerHTML = "Wi = "+ Wi + " W.";
