@@ -980,16 +980,16 @@
      console.log("Cs = " + Cs)
      console.log("B = " + B)
      console.log("C = "+ C)
-      $("#atribuirAlfaCsBCOK").addClass("fa fa-check");
+     // $("#atribuirAlfaCsBCOK").addClass("fa fa-check");
     }
 
     function atribuirM(tipo)
     {
       m = (Pm*Vr)/(r*Tr)
      console.log("m = " + m)
-      if(!tipo)
+     // if(!tipo)
         // document.getElementById("MResult").innerHTML = "m = "+ m +" Kg.";
-      $("#atribuirMOK").addClass("fa fa-check");
+     // $("#atribuirMOK").addClass("fa fa-check");
 
     }
 
@@ -999,18 +999,18 @@
      console.log(Math.log(Math.E))
      console.log(Math.log10(Math.E))
      console.log("rtf = " + Rtf )
-      if(!tipo)
+     // if(!tipo)
        // document.getElementById("RtfResult").innerHTML = "Rtf = "+ Rtf +" m.K/W.";
-      $("#atribuirRtfOK").addClass("fa fa-check");
+     // $("#atribuirRtfOK").addClass("fa fa-check");
     }
 
     function atribuirRtp(tipo)
     {
       Rtp = 1/(hinf*Ss) + tcerum/(Kcer*Ss);
      console.log("Rtp = " + Rtp )
-      if(!tipo)
+    //  if(!tipo)
        // document.getElementById("RtpResult").innerHTML = "Rtp = "+ Rtp +" m.K/W.";
-      $("#atribuirRtpOK").addClass("fa fa-check");
+     // $("#atribuirRtpOK").addClass("fa fa-check");
     }   
 
     //5.10
@@ -1034,7 +1034,7 @@
       }
     Tf = (Tw1 + Tinf)/2;
    console.log("Tf = " + Tf)
-    if(!tipo)
+   // if(!tipo)
       // document.getElementById("TfResult").innerHTML = "Tf = "+ Tf +" K.";
     $("#atribuirTfOK").addClass("fa fa-check");
     atribuirKf();
@@ -1049,27 +1049,27 @@
   {
     Kf = 0.024 + (0.00007*Tf)
    console.log("Kf = " + Kf)
-    if(!tipo)
+   // if(!tipo)
      // document.getElementById("KfResult").innerHTML = "Kf = "+ Kf +" W/m.K.";
-    $("#atribuirKfOK").addClass("fa fa-check");
+    //$("#atribuirKfOK").addClass("fa fa-check");
   }
 
   function atribuirY(tipo)
   {
     y = (b*r*Math.pow(Tf, 5/2))/(patm*(s + Tf))
    console.log("y = " + y)
-    if(!tipo)
+   // if(!tipo)
       // document.getElementById("YResult").innerHTML = "ƴ = "+ y +" m²/s.";
-    $("#atribuirYOK").addClass("fa fa-check");
+    //$("#atribuirYOK").addClass("fa fa-check");
   }
   
   function atrbuirBetadois(tipo)
   {
     Betadois = 1/Tf;
    console.log("β2 = "+Betadois);
-    if(!tipo)
+   // if(!tipo)
       // document.getElementById("BdoisResult").innerHTML = "β2 = "+ Betadois +" K^-1.";
-    $("#atrbuirBetadoisOK").addClass("fa fa-check");
+   // $("#atrbuirBetadoisOK").addClass("fa fa-check");
   }
 
   function atribuirGrd(tipo){
@@ -1079,9 +1079,9 @@
       }
     Grd = (g*Betadois*(Tw1-Tinf)*Math.pow(Dc, 3))/(y*y)
    console.log("Grd = " + Grd)
-    if(!tipo)
-      document.getElementById("GrdResult").innerHTML = "GrD = "+ Grd + " .";
-    $("#atribuirGrdOK").addClass("fa fa-check");
+    //if(!tipo)
+      //document.getElementById("GrdResult").innerHTML = "GrD = "+ Grd + " .";
+    //$("#atribuirGrdOK").addClass("fa fa-check");
   }
 
   function atribuirNu(tipo){
@@ -1091,17 +1091,17 @@
       }
     Nu = (0.698*Math.pow(Grd, 0.209))*Math.pow((1+Math.cos(Math.radians(Betaum))), 0.968)*Math.pow(Tw1/Tinf, -0.317)*Math.pow(D/Dc, 0.425)
    console.log("Nu = " + Nu)
-    if(!tipo)
+   // if(!tipo)
      // document.getElementById("NuResult").innerHTML = "Nu = "+ Nu + " .";
-    $("#atribuirNuOK").addClass("fa fa-check");
+    //$("#atribuirNuOK").addClass("fa fa-check");
   }
 
   function atribuirHci(tipo){
     Hci = (Nu*Kf)/Dc;
    console.log("Hci = " + Hci)
-    if(!tipo)
+   // if(!tipo)
       // document.getElementById("HciResult").innerHTML = "Hci = "+ Hci + " W/(m².K).";
-    $("#atribuirHciOK").addClass("fa fa-check");
+   // $("#atribuirHciOK").addClass("fa fa-check");
   }
 
   function atribuirTetaci(tipo){
@@ -1233,7 +1233,7 @@
   {
     Ei =  ((Pm*Vse*Math.PI*C*(1-T))*Math.sin(Math.radians(Alfa)))/(1+Math.sqrt(1-(C*C)))
    console.log("Ei = "+ Ei)
-    $("#atribuirEiOK").addClass("fa fa-check");
+    //$("#atribuirEiOK").addClass("fa fa-check");
   }
 
   function atribuirWi()
